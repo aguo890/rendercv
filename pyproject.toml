@@ -57,6 +57,7 @@ dependencies = [
   "pydantic-extra-types>=2.10.6",  # Validate extra types
   "pydantic[email]>=2.10.6",  # Validate and parse input files
   "ruamel.yaml>=0.18.10",  # Parse YAML files
+  "streamlit>=1.32.0",  # Frontend UI
 ]
 
 [project.optional-dependencies]

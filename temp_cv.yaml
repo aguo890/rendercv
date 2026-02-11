@@ -1,0 +1,108 @@
+cv:
+  name: Aaron Guo
+  location: Washington, DC
+  email: aguo890@gwmail.gwu.edu
+  phone: "+1 980-337-0681"
+  social_networks:
+    - network: LinkedIn
+      username: guo-aaron
+    - network: GitHub
+      username: aguo890
+  sections:
+    experience:
+      - company: AI Factory Analytics Platform
+        position: Co-founder & Product Designer
+        location: Washington, DC
+        date: 2025-10 – Present
+        highlights:
+          - Spearheaded the end-to-end UI/UX design for an enterprise ERP system, translating complex textile operations into an intuitive, accessible dashboard for 6,000+ users.
+          - Built a scalable Design System and component library using React and Tailwind, ensuring visual consistency across 60+ synchronous production lines.
+          - Conducted user research to design a high-fidelity real-time metrics interface, optimizing information architecture to maintain 60 FPS performance and clarity.
+          - Collaborated cross-functionally to implement responsive layouts and interactive widgets, bridging the gap between design mockups and production code.
+          - **[Product Demo](https://drive.google.com/file/d/15tm-84NbP3e_RE5n8vTv97zNvIOZiah1/view?usp=drive_link)**
+      - company: Multi-State Tax Optimization Platform
+        position: Co-founder & Lead Frontend Engineer
+        location: Washington, DC
+        date: 2025-10 – Present
+        highlights:
+          - Designed and engineered a "governance-first" financial dashboard, focusing on data visualization clarity using Recharts and interactive UI patterns.
+          - Developed a responsive client-side architecture using React/Vite, creating a seamless user journey for complex tax compliance workflows.
+          - Implemented accessibility-first form validation and error handling, reducing user friction for 100+ waitlisted physicians.
+          - Authored technical documentation and style guides to ensure design-to-development fidelity for future feature rollouts.
+          - **[Product Demo](https://drive.google.com/file/d/1-6cWK3L9uAJTZqGEh0gtmbpxBO6OLAv_/view?usp=drive_link)**
+      - company: The George Washington University
+        position: Technical Support Assistant
+        location: Washington, DC
+        date: 2025-08 – Present
+        highlights:
+          - Act as the primary liaison between users and engineering teams, translating non-technical feedback into actionable system improvements.
+          - Author user-facing documentation and knowledge base articles, improving user self-service rates and clarity.
+      - company: Three Stars Fashion Group
+        position: Data Engineer Intern
+        location: Alexandria, Egypt
+        date: 2025-06 – 2025-09
+        highlights:
+          - Designed and deployed a live visual dashboard with Chart.js, enabling managers to instantly pinpoint bottlenecks through clear data storytelling.
+          - Improved internal workflows by automating inventory processes, focusing on user-centered automation that saved the team 16+ hours weekly.
+      - company: Sunwater Capital
+        position: Data Science Intern
+        location: North Bethesda, MD
+        date: 2025-01 – 2025-05
+        highlights:
+          - Transformed raw legislative data into clean, visual insights, using web scraping and NLP to power clear reporting for non-technical stakeholders.
+      - company: China Fun Restaurants
+        position: Data Analyst
+        location: Charlotte, NC
+        date: 2020-09 – 2024-08
+        highlights:
+          - Developed compelling data narratives using Tableau visualizations, successfully influencing menu strategy and generating $5k in monthly revenue.
+          - Visualized complex sales data to identify trends, focusing on clear presentation and actionable insights for management.
+    leadership_&_campus_involvement:
+      - company: Association of Computing Machinery (ACM)
+        position: President
+        date: 2024-08 – Present
+        highlights:
+          - Lead a community of student developers/designers, organizing workshops on Frontend Development, Career Prep, and Project Documentation.
+          - Managed brand presence and outreach, successfully growing chapter membership by over 100 students through engaging content strategy.
+    education:
+      - institution: The George Washington University
+        area: Computer Science (Focus on Human-Computer Interaction)
+        degree: Bachelor of Science
+        date: Expected 2026-06
+        location: Washington, DC
+    skills:
+      - label: Design & UI
+        details: Figma, Adobe Creative Suite, Wireframing, Prototyping, Design Systems, Responsive Design, Accessibility (WCAG)
+      - label: Frontend
+        details: React, Next.js, Tailwind CSS, TypeScript, Vite, Recharts, Chart.js, HTML5, CSS3
+      - label: Backend & Data
+        details: Python, SQL, Node.js, FastAPI, PostgreSQL (Full Stack Context)
+      - label: Tools
+        details: Git, Docker, Vercel, VS Code
+      - label: Languages
+        details: English (Native), Mandarin (Fluent)
+design:
+  theme: sb2nov
+  page:
+    top_margin: 0.5in
+    bottom_margin: 0.5in
+    left_margin: 0.5in
+    right_margin: 0.5in
+    show_footer: false
+  typography:
+    font_size:
+      name: 11pt
+      body: 10pt
+      section_titles: 12pt
+    line_spacing: 0.5em
+  section_titles:
+    space_above: 0.3cm
+    space_below: 0.2cm
+  sections:
+    space_between_regular_entries: 0.2cm
+  header:
+    space_below_name: 0.2cm
+    space_below_headline: 0.2cm
+    space_below_connections: 0.2cm
+  entries:
+    side_space: 0cm

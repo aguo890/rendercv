@@ -1,0 +1,14 @@
+services:
+  rendercv-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - /app/.venv
+    ports:
+      - "8000:8000"
+      - "8502:8501"
+    command: bash -c "uv sync --frozen --all-extras --all-groups && streamlit run app.py --server.address=0.0.0.0"
+    stdin_open: true # docker run -i
+    tty: true # docker run -t
