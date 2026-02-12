@@ -82,7 +82,7 @@ cv:
           - Led 10+ professional development workshops and speaker events for the student community on topics ranging from Technical skills, Career Preparation, AI and Machine Learning, Project Documentation.
           - Successfully grew chapter membership by over 100 students through strategic outreach, engaging social media content, and promotional events across campus.
     projects:
-      - name: JEGA: Academic Test Facility
+      - name: "JEGA: Academic Test Facility"
         date: 2025-10 – Present
         summary: An open-source, full-stack application for creating a secure, proctored environment for academic testing.
         highlights:
