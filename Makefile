@@ -5,11 +5,6 @@ PYTHON_CMD ?= uv run python
 help:
 	@echo "Available commands:"
 	@echo "  make push         - Smart push with auto-generated commit message"
-
-push:
-	@echo "✅ Board verified. Running smart push..."
-	@$(PYTHON_CMD) scripts/autocommit.py
-
 	@echo "  make app          - Start the Streamlit app in Docker"
 	@echo "  make logs         - View Docker logs"
 	@echo "  make stop         - Stop Docker containers"
@@ -17,6 +12,10 @@ push:
 	@echo "  make test         - Run tests locally"
 	@echo "  make format       - Format code locally"
 	@echo "  make docker-build - Rebuild Docker image"
+
+push:
+	@echo "✅ Board verified. Running smart push..."
+	@$(PYTHON_CMD) scripts/autocommit.py
 
 # Docker Commands
 app:
