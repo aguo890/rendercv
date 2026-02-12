@@ -51,13 +51,15 @@ classifiers = [
 ]  # See all classifiers at https://pypi.org/classifiers/
 # RenderCV depends on these packages. They are installed automatically when RenderCV is installed:
 dependencies = [
-  "Jinja2>=3.1.6",  # Generate Typst and Markdown files
-  "markdown>=3.10",  # Convert Markdown to HTML
-  "phonenumbers>=9.0.19",  # Validate phone numbers
-  "pydantic-extra-types>=2.10.6",  # Validate extra types
-  "pydantic[email]>=2.10.6",  # Validate and parse input files
-  "ruamel.yaml>=0.18.10",  # Parse YAML files
-  "streamlit>=1.32.0",  # Frontend UI
+  "Jinja2>=3.1.6", # Generate Typst and Markdown files
+  "markdown>=3.10", # Convert Markdown to HTML
+  "openai>=2.20.0",
+  "phonenumbers>=9.0.19", # Validate phone numbers
+  "pydantic-extra-types>=2.10.6", # Validate extra types
+  "pydantic[email]>=2.10.6", # Validate and parse input files
+  "python-dotenv>=1.2.1",
+  "ruamel.yaml>=0.18.10", # Parse YAML files
+  "streamlit>=1.32.0", # Frontend UI
 ]
 
 [project.optional-dependencies]
