@@ -2,12 +2,13 @@
 #make sure to make the cv easy to read and visually appealing
 cv:
   name: Aaron Guo
-  location: Washington, DC
+  location: Washington, D.C.
   email: aguo890@gwmail.gwu.edu
   phone: "+1 980-337-0681"
+  website: https://aguo890.github.io/
   social_networks:
     - network: LinkedIn
-      username: guo-aaron
+      username: aaron-guo
     - network: GitHub
       username: aguo890
   sections:
@@ -80,6 +81,47 @@ cv:
         highlights:
           - Led 10+ professional development workshops and speaker events for the student community on topics ranging from Technical skills, Career Preparation, AI and Machine Learning, Project Documentation.
           - Successfully grew chapter membership by over 100 students through strategic outreach, engaging social media content, and promotional events across campus.
+    projects:
+      - name: JEGA: Academic Test Facility
+        date: 2025-10 – Present
+        summary: An open-source, full-stack application for creating a secure, proctored environment for academic testing.
+        highlights:
+          - Developed a Real-Time Lab Dashboard with a spatial room map mirroring physical lab layouts.
+          - Implemented secure RBAC authentication and session exclusivity to prevent login sharing.
+          - Built dynamic classroom management tools for rosters and bulk zip streaming for submissions.
+      - name: Job Scraping Engine
+        date: 2026-02
+        summary: An advanced job scraping tool that fetches, processes, and analyzes job postings from multiple ATS platforms.
+        highlights:
+          - Implemented multi-platform fetching for Greenhouse, Lever, and Ashby APIs.
+          - Built an interactive Streamlit dashboard for filtering and analyzing job opportunities.
+          - Automated daily scraping and reporting via GitHub Actions.
+      - name: RenderCV (Personal Fork)
+        date: 2026-02
+        summary: A Dockerized, live-preview CV editor built on top of the RenderCV engine.
+        highlights:
+          - Added a Streamlit-based web editor with real-time dual-panel PDF preview.
+          - Created a Dockerized development environment for zero-setup deployment.
+          - Implemented one-click PDF downloads and custom output filename configurations.
+      - name: AI-Powered Content Pipeline
+        date: 2025
+        summary: Fully automated system for generating and posting short-form video content from Reddit stories.
+        highlights:
+          - Automated video generation with dyslexic-style captions for higher engagement.
+          - Integrated TikTok, Instagram Reels, and YouTube Shorts uploaders for cross-platform posting.
+          - Implemented ElevenLabs API key rotation for cost-effective Text-to-Speech generation.
+      - name: Graduate Application System
+        date: 2024
+        summary: A comprehensive system for managing graduate school applications and tracking status.
+        highlights:
+          - Designed a centralized dashboard to track application progress and deadlines.
+          - Implemented automated status updates and document management features.
+      - name: Statistical Analysis in Esports
+        date: 2022
+        summary: Research paper analyzing the impact of resource accumulation on game outcomes in League of Legends.
+        highlights:
+          - Published in the Journal of Student Research (JSR) as a preprint.
+          - Analyzed gold difference correlation with win rates using statistical modeling.
     education:
       - institution: The George Washington University
         area: Computer Science

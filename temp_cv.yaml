@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
+#make sure to make the cv easy to read and visually appealing
 cv:
   name: Aaron Guo
   location: Washington, DC
@@ -9,86 +10,95 @@ cv:
       username: guo-aaron
     - network: GitHub
       username: aguo890
-  
   sections:
-    summary:
-      - "Emerging Solution Architect and Data Engineer with a track record of building and **selling** enterprise-grade platforms. Merges deep technical expertise in **Modern Data Stacks (SQL, Python, Cloud)** with commercial acumen to drive adoption for **SaaS** and **ERP** solutions. Specialized in delivering high-fidelity **Proof of Concepts (PoCs)** that convert technical requirements into **revenue-generating** partnerships."
-
-    technical_skills:
-      - label: Solution Engineering
-        details: Proof of Concept (PoC) Execution, Technical Discovery, Value-Based Demonstration, Stakeholder Management, Requirement Mapping
-      - label: Data & Storage
-        details: Advanced SQL (Window Functions, CTEs), ETL/ELT Architectures, Data Warehousing, PostgreSQL, SQLAlchemy, Alembic, Redis
-      - label: AI & Languages
-        details: Python, R, TypeScript, OpenAI API (RAG Implementation), Prompt Engineering, Large Language Models (LLMs)
-      - label: Infrastructure
-        details: AWS (Lambda, S3), Docker, Celery, React/Next.js, FastAPI, CI/CD, Zero-Trust Architecture
-
     experience:
-      - company: AI Factory Analytics Platform
-        position: Co-founder & Lead Solution Architect
-        location: Washington, DC
-        date: 2025-10 – Present
-        highlights:
-          - "Secured a commercial pilot with a **$50M+ ARR** manufacturer by engineering a custom **Proof of Concept (PoC)** that digitized operations for **6,000+** employees."
-          - "Solved critical data latency objections during the sales cycle by building a **Python/Celery** pipeline; reduced ingestion lag by **95%** for **10k+** daily unstructured rows."
-          - "Orchestrated technical discovery sessions with client executives to map business KPIs to a **Zero-Trust** multi-tenant architecture deployed across **5** facilities."
-          - "Eliminated N+1 query bottlenecks in **SQL**, reducing API latency from **300ms** to **<50ms** to ensure flawless performance during high-stakes **client demonstrations**."
-          - "**[View Product Demo](https://drive.google.com/file/d/15tm-84NbP3e_RE5n8vTv97zNvIOZiah1/view?usp=drive_link)** – *Demonstrates Real-Time Dashboard Capabilities*"
-
       - company: Multi-State Tax Optimization Platform
-        position: Co-founder & Product Engineer
+        position: Co-founder & Lead Data Engineer
         location: Washington, DC
         date: 2025-10 – Present
         highlights:
-          - "Validated market demand by capturing a waitlist of **100+** high-net-worth physicians through targeted **value-based demonstrations** and technical walkthroughs."
-          - "Architected a governance-first compliance engine using **SQLAlchemy** to automate reciprocity rules across **50+** jurisdictions, mitigating audit risk by an estimated **80%**."
-          - "Integrated a **RAG (Retrieval-Augmented Generation)** engine to interpret complex tax codes, demonstrating ability to apply **AI/ML** to solve non-technical business problems."
-          - "Built a tamper-proof financial event log ensuring strict adherence to **IRS regulations**, showcasing expertise in handling sensitive/regulated data."
-          - "**[View Product Demo](https://drive.google.com/file/d/1-6cWK3L9uAJTZqGEh0gtmbpxBO6OLAv_/view?usp=drive_link)** – *Demonstrates AI-Driven Compliance*"
+          - Architected a multi-state tax compliance SaaS validating market demand with a waitlist of 100+ physicians, automating payroll apportionment to mitigate IRS audit risks.
+          - Engineered a "governance-first" financial engine using SQLAlchemy and Alembic, enabling precise allocation of salary across 50+ tax jurisdictions with complex reciprocity rules.
+          - Built a high-performance React/Vite dashboard featuring interactive Recharts visualizations to track tax nexus thresholds and per diem timelines in real-time.
+          - Implemented a tamper-proof, event-sourced audit logging system to capture all financial state changes, ensuring strict adherence to IRS Accountable Plan regulations.
+          - Designed a robust FastAPI layer with 15+ endpoints, achieving high reliability through comprehensive Pytest coverage and automated documentation.
+          - Created a RAG engine within the website to provide users with accurate and up-to-date information about tax laws and regulations.
+          - **[Product Demo](https://drive.google.com/file/d/1-6cWK3L9uAJTZqGEh0gtmbpxBO6OLAv_/view?usp=drive_link)**
+      - company: AI Factory Analytics Platform
+        position: Co-founder & Lead Data Engineer
+        location: Washington, DC
+        date: 2025-10 – Present
+        highlights:
+          - Founded and engineered an enterprise ERP solution piloting with a major textile manufacturer ($50M+ ARR), digitizing operations for 6,000+ employees.
+          - Architect a scalable, event-driven data ingestion pipeline using Python and Celery to parse 10k+ daily unstructured rows, reducing data latency by 95%.
+          - Engineer a high-performance React/Vite dashboard rendering real-time metrics for 60+ synchronous lines, maintaining 60 FPS on low-end hardware.
+          - Design a Zero-Trust multi-tenant architecture that isolates data across 5 distinct facilities, ensuring strict data sovereignty and preventing privilege escalation.
+          - Optimize high-traffic API endpoints using SQLAlchemy loading strategies (selectin/joined) to eliminate N+1 query bottlenecks, reducing latency from 300ms to <50ms.
+          - Implement granular Role-Based Access Control (RBAC) and input sanitizers to neutralize OWASP Top 10 vulnerabilities (XSS, Injection).
+          - Sleek and intuitive UI/UX design with a focus on user experience and ease of use creating dynamic dashboards and widgets using industry standard practices.
 
+          - **[Product Demo](https://drive.google.com/file/d/15tm-84NbP3e_RE5n8vTv97zNvIOZiah1/view?usp=drive_link)**
+      - company: The George Washington University
+        position: Technical Support Assistant
+        location: Washington, DC
+        date: 2025-08 – Present
+        highlights:
+          - Diagnose and resolve an average of 15+ daily technical support tickets related to Software/Hardware and GWSystems.
+          - Act as the technical liaison between non-technical university staff and IT engineers.
+          - Author documentation for an internal knowledge base, improving team efficiency & issue resolution.
+          - Apply knowledge of core IT infrastructure to resolve complex, underlying system issues.
       - company: Three Stars Fashion Group
         position: Data Engineer Intern
         location: Alexandria, Egypt
         date: 2025-06 – 2025-09
         highlights:
-          - "Automated the supply chain data lifecycle using **Python** and **Pandas**, eliminating manual entry and reclaiming **16+ hours/week** for the logistics team."
-          - "Architected a serverless alert system on **AWS Lambda**, reducing communication latency by **~40%** for critical international shipments."
-          - "Deployed a live production dashboard that identified assembly line bottlenecks, driving a measured **15%** increase in throughput efficiency."
-          - "Authored comprehensive **technical documentation** and user guides, ensuring successful handoff and long-term adoption by non-technical staff."
-
+          - Automated the processing of supplier inventory spreadsheets using a Python and Pandas script, freeing up 30 minutes of cleaning into Excel and saving the supply chain team 16+ hours every week.
+          - Built and deployed a live dashboard with Flask and Chart.js to help managers visualize production line output, helping pinpoint key bottlenecks in the assembly line nearly instantly.
+          - Designed a serverless alert system using AWS Lambda and SNS to instantly notify the logistics team about large, shipment-ready orders, effectively cutting down on communication delays.
+          - Created clear technical documentation and user guides in Microsoft Word for all developed tools above, ensuring a smooth handoff and easy adoption by the full-time team and guaranteeing long-term maintainability.
       - company: Sunwater Capital
         position: Data Science Intern
         location: North Bethesda, MD
         date: 2025-01 – 2025-05
         highlights:
-          - "Built a scalable data extraction pipeline using **PySpark**, transforming unstructured legislative data into analysis-ready insights for the investment committee."
-          - "Leveraged **OpenAI API** to build an automated fact-checking tool, reducing manual validation time by **90%** and increasing data reliability."
-
+          - Architected an end-to-end data pipeline using PySpark and SerpAPI to automatically extract and clean legislative data, ensuring the entire team had a reliable stream of information for analysis.
+          - Cut manual fact-checking time by 90% by building an AI validation tool with the OpenAI API.
+          - Turned messy committee hearing transcripts into strategic insights by building a Python web scraper and using NLP to extract key topics for the analysis team.
+          - Wrangled/transformed raw web data into clean, analysis ready datasets using R (dplyr, tidyr), preparing the ground for modeling and clear reporting.
       - company: China Fun Restaurants
         position: Data Analyst / Assistant Manager
         location: Charlotte, NC
         date: 2020-09 – 2024-08
         highlights:
-          - "Applied **SQL analytics** to inventory data, reducing food waste by **14%** and driving a **7%** increase in profit margins."
-          - "Presented data-driven menu strategies to management using **Tableau**, resulting in **$5k** additional monthly revenue."
-
+          - Implemented a time-series forecasting model on sales data to optimize daily inventory procurement, reducing food waste by 14% and increasing profit margins by over 7%.
+          - Analyzed and visualized a complex 200+ item menu using Tableau and Power BI to identify profitability and sales trends, making smarter inventory and marketing decisions.
+          - Developed compelling data narratives using Tableau visualizations, successfully influencing a new menu strategy that generated an additional $5k in monthly revenue.
     leadership_&_campus_involvement:
-      - company: Association of Computing Machinery (ACM)
+      - company: Association of Computing Machinery (ACM) | George Washington University
         position: President
-        location: George Washington University
         date: 2024-08 – Present
         highlights:
-          - "Spearheaded professional development for **100+** students, delivering technical workshops on **AI/ML**, Cloud Computing, and Career Preparation."
-          - "Grew chapter membership by **~30%** through strategic outreach and presenting value propositions to the student body."
-
+          - Led 10+ professional development workshops and speaker events for the student community on topics ranging from Technical skills, Career Preparation, AI and Machine Learning, Project Documentation.
+          - Successfully grew chapter membership by over 100 students through strategic outreach, engaging social media content, and promotional events across campus.
     education:
       - institution: The George Washington University
-        area: Bachelor of Science in Computer Science
-        degree: BS
-        date: Expected June 2026
+        area: Computer Science
+        degree: Bachelor of Science
+        date: Expected 2026-06
         location: Washington, DC
-
+    skills:
+      - label: Languages
+        details: Python, SQL, R, TypeScript, JavaScript, Java, Kotlin
+      - label: Frontend
+        details: React, Next.js, Node.js, Vite, Zustand, Recharts, Orval
+      - label: Backend
+        details: FastAPI, Node.js, PostgreSQL, SQLAlchemy, Alembic, Redis, Celery, REST APIs
+      - label: Data & AI
+        details: Prompt Engineering, Agentic AIs, Google AI Studio, OpenAI API
+      - label: Tools & Cloud
+        details: Docker, Git, Makefile, Tailwind CSS, AWS Lambda
+      - label: Spoken Languages
+        details: English (Native), Mandarin (Fluent)
 design:
   theme: sb2nov
   page:
@@ -114,8 +124,7 @@ design:
     space_below_connections: 0.2cm
   entries:
     side_space: 0cm
-
 settings:
   render_command:
-    pdf_path: "rendercv_output/Aaron_Guo_Snowflake_Solution_Engineer.pdf"
-    png_path: "rendercv_output/Aaron_Guo_Snowflake_Solution_Engineer.png"
+    pdf_path: "rendercv_output/NAME_IN_SNAKE_CASE_CV_General_MONTH_ABBREVIATION_YEAR.pdf"
+    png_path: "rendercv_output/NAME_IN_SNAKE_CASE_CV_General_MONTH_ABBREVIATION_YEAR.png"

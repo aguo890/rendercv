@@ -1,7 +1,15 @@
 .PHONY: run install test format docker-build docker-run help
+PYTHON_CMD ?= uv run python
+
 
 help:
 	@echo "Available commands:"
+	@echo "  make push         - Smart push with auto-generated commit message"
+
+push:
+	@echo "✅ Board verified. Running smart push..."
+	@$(PYTHON_CMD) scripts/autocommit.py
+
 	@echo "  make app          - Start the Streamlit app in Docker"
 	@echo "  make logs         - View Docker logs"
 	@echo "  make stop         - Stop Docker containers"
