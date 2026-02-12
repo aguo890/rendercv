@@ -1,4 +1,5 @@
 import os
+# Smart Push Script v1.0
 import subprocess
 import sys
 from pathlib import Path
