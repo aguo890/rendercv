@@ -8,7 +8,7 @@ cv:
   website: https://aguo890.github.io/
   social_networks:
     - network: LinkedIn
-      username: aaron-guo
+      username: guo-aaron
     - network: GitHub
       username: aguo890
   sections:
@@ -24,7 +24,7 @@ cv:
           - Implemented a tamper-proof, event-sourced audit logging system to capture all financial state changes, ensuring strict adherence to IRS Accountable Plan regulations.
           - Designed a robust FastAPI layer with 15+ endpoints, achieving high reliability through comprehensive Pytest coverage and automated documentation.
           - Created a RAG engine within the website to provide users with accurate and up-to-date information about tax laws and regulations.
-          - **[Product Demo](https://drive.google.com/file/d/1-6cWK3L9uAJTZqGEh0gtmbpxBO6OLAv_/view?usp=drive_link)**
+          - "**[Product Demo](https://drive.google.com/file/d/1-6cWK3L9uAJTZqGEh0gtmbpxBO6OLAv_/view?usp=drive_link)**"
       - company: AI Factory Analytics Platform
         position: Co-founder & Lead Data Engineer
         location: Washington, DC
@@ -38,7 +38,7 @@ cv:
           - Implement granular Role-Based Access Control (RBAC) and input sanitizers to neutralize OWASP Top 10 vulnerabilities (XSS, Injection).
           - Sleek and intuitive UI/UX design with a focus on user experience and ease of use creating dynamic dashboards and widgets using industry standard practices.
 
-          - **[Product Demo](https://drive.google.com/file/d/15tm-84NbP3e_RE5n8vTv97zNvIOZiah1/view?usp=drive_link)**
+          - "**[Product Demo](https://drive.google.com/file/d/15tm-84NbP3e_RE5n8vTv97zNvIOZiah1/view?usp=drive_link)**"
       - company: The George Washington University
         position: Technical Support Assistant
         location: Washington, DC
@@ -138,7 +138,7 @@ cv:
       - label: Data & AI
         details: Prompt Engineering, Agentic AIs, Google AI Studio, OpenAI API
       - label: Tools & Cloud
-        details: Docker, Git, Makefile, Tailwind CSS, AWS Lambda
+        details: Docker, Git, Makefile, Tailwind CSS, AWS Lambda, Nginx, Ansible, Bash
       - label: Spoken Languages
         details: English (Native), Mandarin (Fluent)
 design:
