@@ -82,6 +82,13 @@ cv:
           - Led 10+ professional development workshops and speaker events for the student community on topics ranging from Technical skills, Career Preparation, AI and Machine Learning, Project Documentation.
           - Successfully grew chapter membership by over 100 students through strategic outreach, engaging social media content, and promotional events across campus.
     projects:
+      - name: RenderCV (Personal Fork)
+        date: 2026-02
+        summary: A Dockerized, live-preview CV editor built on top of the RenderCV engine.
+        highlights:
+          - Added a Streamlit-based web editor with real-time dual-panel PDF preview.
+          - Created a Dockerized development environment for zero-setup deployment.
+          - Implemented one-click PDF downloads and custom output filename configurations.
       - name: "JEGA: Academic Test Facility"
         date: 2025-10 – Present
         summary: An open-source, full-stack application for creating a secure, proctored environment for academic testing.
@@ -96,13 +103,7 @@ cv:
           - Implemented multi-platform fetching for Greenhouse, Lever, and Ashby APIs.
           - Built an interactive Streamlit dashboard for filtering and analyzing job opportunities.
           - Automated daily scraping and reporting via GitHub Actions.
-      - name: RenderCV (Personal Fork)
-        date: 2026-02
-        summary: A Dockerized, live-preview CV editor built on top of the RenderCV engine.
-        highlights:
-          - Added a Streamlit-based web editor with real-time dual-panel PDF preview.
-          - Created a Dockerized development environment for zero-setup deployment.
-          - Implemented one-click PDF downloads and custom output filename configurations.
+
       - name: AI-Powered Content Pipeline
         date: 2025
         summary: Fully automated system for generating and posting short-form video content from Reddit stories.
