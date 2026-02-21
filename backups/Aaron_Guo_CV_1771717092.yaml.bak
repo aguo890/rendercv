@@ -1,6 +1,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
+#make sure to make the cv easy to read and visually appealing
 cv:
-  name: Aaron Guo
+  name: WOwsads
   location: Washington, D.C.
   email: aguo890@gwmail.gwu.edu
   phone: "+1 980-337-0681"
@@ -29,13 +30,14 @@ cv:
         location: Washington, DC
         date: 2025-10 – Present
         highlights:
-          - Founded and engineered an enterprise ERP and MES (Manufacturing Execution System) solution, piloting with a major textile manufacturer ($50M+ ARR) to digitize shop-floor operations for 6,000+ employees.
-          - Architected a scalable, event-driven IoT data ingestion pipeline using Python and Celery to parse telemetry directly from PLCs (Programmable Logic Controllers) and SCADA systems, processing 10k+ daily unstructured rows and reducing data latency by 95%.
-          - Engineered a high-performance React/Vite dashboard to monitor real-time manufacturing KPIs—including OEE (Overall Equipment Effectiveness), cycle time, throughput, and machine downtime—across 60+ synchronous production lines, maintaining 60 FPS on low-end hardware.
-          - Designed a Zero-Trust multi-tenant architecture isolating operational data across 5 distinct facilities, ensuring strict data sovereignty and compliance with industrial cybersecurity standards.
-          - Optimized high-traffic API endpoints using SQLAlchemy loading strategies (selectin/joined) to eliminate N+1 query bottlenecks, reducing MES reporting latency from 300ms to <50ms.
-          - Implemented granular Role-Based Access Control (RBAC) mapped to factory floor hierarchies (Operators, Supervisors, Plant Managers) to neutralize OWASP Top 10 vulnerabilities (XSS, Injection).
-          - Automated defect rate and yield tracking workflows, translating raw shop-floor data into actionable insights for continuous production optimization.
+          - Founded and engineered an enterprise ERP solution piloting with a major textile manufacturer ($50M+ ARR), digitizing operations for 6,000+ employees.
+          - Architect a scalable, event-driven data ingestion pipeline using Python and Celery to parse 10k+ daily unstructured rows, reducing data latency by 95%.
+          - Engineer a high-performance React/Vite dashboard rendering real-time metrics for 60+ synchronous lines, maintaining 60 FPS on low-end hardware.
+          - Design a Zero-Trust multi-tenant architecture that isolates data across 5 distinct facilities, ensuring strict data sovereignty and preventing privilege escalation.
+          - Optimize high-traffic API endpoints using SQLAlchemy loading strategies (selectin/joined) to eliminate N+1 query bottlenecks, reducing latency from 300ms to <50ms.
+          - Implement granular Role-Based Access Control (RBAC) and input sanitizers to neutralize OWASP Top 10 vulnerabilities (XSS, Injection).
+          - Sleek and intuitive UI/UX design with a focus on user experience and ease of use creating dynamic dashboards and widgets using industry standard practices.
+
           - "**[Product Demo](https://drive.google.com/file/d/15tm-84NbP3e_RE5n8vTv97zNvIOZiah1/view?usp=drive_link)**"
       - company: The George Washington University
         position: Technical Support Assistant
@@ -101,6 +103,7 @@ cv:
           - Implemented multi-platform fetching for Greenhouse, Lever, and Ashby APIs.
           - Built an interactive Streamlit dashboard for filtering and analyzing job opportunities.
           - Automated daily scraping and reporting via GitHub Actions.
+
       - name: AI-Powered Content Pipeline
         date: 2025
         summary: Fully automated system for generating and posting short-form video content from Reddit stories.
