@@ -1,8 +1,9 @@
-import streamlit as st
-import subprocess
-import os
 import glob
+import os
 import shutil
+import subprocess
+
+import streamlit as st
 import yaml as pyyaml
 
 # --- Constants ---
@@ -15,7 +16,7 @@ def load_initial_data():
     """Loads the default CV YAML into session state if not already present."""
     if "cv_content" not in st.session_state:
         if os.path.exists(DEFAULT_CV_FILE):
-            with open(DEFAULT_CV_FILE, "r", encoding="utf-8") as f:
+            with open(DEFAULT_CV_FILE, encoding="utf-8") as f:
                 st.session_state["cv_content"] = f.read()
         else:
             st.session_state["cv_content"] = "# Default CV file not found.\n# Paste your RenderCV YAML here."
@@ -67,12 +68,12 @@ def run_render_cv():
         )
         return result
     except Exception as e:
-        return f"System Error: {str(e)}"
+        return f"System Error: {e!s}"
 
 def reset_to_original():
     """Resets the editor content to the file on disk."""
     if os.path.exists(DEFAULT_CV_FILE):
-        with open(DEFAULT_CV_FILE, "r", encoding="utf-8") as f:
+        with open(DEFAULT_CV_FILE, encoding="utf-8") as f:
             st.session_state["cv_content"] = f.read()
         st.toast("Reset to original file!", icon="🔄")
     else:
