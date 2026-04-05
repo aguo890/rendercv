@@ -80,21 +80,22 @@ cv:
     projects:
       - name: Job Automation Suite
         date: 2026-02 – Present
-        summary: An all-in-one automation suite combining multi-platform ATS scraping, data analysis, and AI-driven CV tailoring.
+        summary: An all-in-one automation suite featuring multi-platform ATS scraping, an integrated keyword scoring engine, and AI-driven CV tailoring.
         highlights:
           - Engineered a monorepo architecture bridging a custom scraping engine with a dynamic LaTeX/PDF rendering system to automate job applications.
+          - Implemented a fully customizable keyword point-scoring algorithm to parse unstructured job descriptions, automatically ranking and isolating the highest-match niche roles.
           - Developed an interactive **Streamlit** dashboard to track real-time job market data and trigger one-click, keyword-optimized CV generation.
           - Integrated an LLM orchestration layer to autonomously analyze job descriptions and draft targeted cover letters.
           - Containerized the full application pipeline utilizing **Docker Compose**, establishing a cross-platform environment with hot-reloading and continuous data sync.
           - "**[GitHub Repository](https://github.com/aguo890/Job-Automation-Suite)**"
       - name: "JEGA: Academic Test Facility"
-        url: https://github.com/aguo890/capstone
         date: 2025-10 – Present
         summary: An open-source, full-stack application for creating a secure, proctored environment for academic testing.
         highlights:
           - Engineered a Real-Time Lab Dashboard featuring a spatial mapping system that accurately mirrors physical classroom configurations.
           - Secured platform integrity by implementing strict **RBAC** authentication and enforcing session exclusivity to prevent credential sharing.
           - Developed bulk data-streaming pipelines to handle rapid classroom roster updates and mass zip-file assignment submissions for **[~100+]** students.
+          - "**[GitHub Repository](https://github.com/aguo890/capstone)**"
       - name: AI-Powered Content Pipeline
         date: 2025
         summary: Fully automated system for generating and posting short-form video content from Reddit stories.

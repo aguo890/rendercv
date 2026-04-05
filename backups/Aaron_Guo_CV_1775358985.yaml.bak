@@ -12,6 +12,14 @@ cv:
       username: aguo890
   sections:
     experience:
+      - company: xAI
+        position: Controls Engineering Intern
+        location: Memphis, TN
+        date: 2026-06 – 2026-08
+        highlights:
+          - Incoming Controls Engineering Intern at the Colossus facility, supporting the industrial automation and infrastructure for a massive **100,000+ NVIDIA H100 GPU** supercomputer cluster.
+          - Will utilize **Python** and **SQL** to interface with **PLCs** and **SCADA** systems, optimizing real-time power distribution and cooling loops for the world's most powerful AI training environment.
+          - Slated to engineer responsive, low-latency telemetry dashboards (**HTML**, **Python**) to visualize critical facility metrics, ensuring maximum operational uptime.
       - company: Multi-State Tax Optimization Platform
         position: Co-founder & Lead Data Engineer
         location: Washington, DC
@@ -79,22 +87,30 @@ cv:
           - Scaled chapter membership by **100+** active students through targeted marketing campaigns, campus events, and cross-organization networking.
     projects:
       - name: Job Automation Suite
-        url: https://github.com/aguo890/Job-Automation-Suite
         date: 2026-02 – Present
-        summary: An all-in-one automation suite combining multi-platform ATS scraping, data analysis, and AI-driven CV tailoring.
+        summary: An all-in-one automation suite featuring multi-platform ATS scraping, an integrated keyword scoring engine, and AI-driven CV tailoring.
         highlights:
           - Engineered a monorepo architecture bridging a custom scraping engine with a dynamic LaTeX/PDF rendering system to automate job applications.
+          - Implemented a fully customizable keyword point-scoring algorithm to parse unstructured job descriptions, automatically ranking and isolating the highest-match niche roles.
           - Developed an interactive **Streamlit** dashboard to track real-time job market data and trigger one-click, keyword-optimized CV generation.
           - Integrated an LLM orchestration layer to autonomously analyze job descriptions and draft targeted cover letters.
           - Containerized the full application pipeline utilizing **Docker Compose**, establishing a cross-platform environment with hot-reloading and continuous data sync.
+          - "**[GitHub Repository](https://github.com/aguo890/Job-Automation-Suite)**"
+      - name: OpenClaw Agentic Suite (Workflow Optimization)
+        date: 2026-01 – Present
+        summary: A highly optimized, multi-agent framework configured to drastically accelerate personal software engineering and research lifecycles.
+        highlights:
+          - Customized the OpenClaw architecture to act as a virtual engineering department, transitioning personal workflow into a managerial role orchestrating a specialized team of AI "experts."
+          - Engineered parallel execution branches to automate code generation, deep-dive research, and daily reporting, achieving a **10x** increase in personal shipping velocity.
+          - Optimized the agentic suite to mimic the rapid iteration cycles of elite AI labs, freeing up cognitive bandwidth to focus strictly on high-level systems architecture and strategic problem-solving.
       - name: "JEGA: Academic Test Facility"
-        url: https://github.com/aguo890/capstone
         date: 2025-10 – Present
         summary: An open-source, full-stack application for creating a secure, proctored environment for academic testing.
         highlights:
           - Engineered a Real-Time Lab Dashboard featuring a spatial mapping system that accurately mirrors physical classroom configurations.
           - Secured platform integrity by implementing strict **RBAC** authentication and enforcing session exclusivity to prevent credential sharing.
           - Developed bulk data-streaming pipelines to handle rapid classroom roster updates and mass zip-file assignment submissions for **[~100+]** students.
+          - "**[GitHub Repository](https://github.com/aguo890/capstone)**"
       - name: AI-Powered Content Pipeline
         date: 2025
         summary: Fully automated system for generating and posting short-form video content from Reddit stories.
@@ -124,11 +140,11 @@ cv:
       - label: Languages
         details: Python, SQL, R, TypeScript, JavaScript, Java, Kotlin
       - label: Frontend
-        details: React, Next.js, Node.js, Vite, Zustand, Recharts, Orval
+        details: React, Next.js, Node.js, Vite, Zustand, Recharts, Orval, HTML/CSS
       - label: Backend
         details: FastAPI, Node.js, PostgreSQL, SQLAlchemy, Alembic, Redis, Celery, REST APIs
-      - label: Data & AI
-        details: Prompt Engineering, Agentic AIs, Google AI Studio, OpenAI API
+      - label: Data & Controls
+        details: PLCs, SCADA, Prompt Engineering, Agentic AIs, Google AI Studio, OpenAI API
       - label: Tools & Cloud
         details: Docker, Git, Makefile, Tailwind CSS, AWS Lambda, Nginx, Ansible, Bash
       - label: Spoken Languages
