@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
 cv:
-  name: Aaron Brz
+  name: Aaron Guo
   location: Washington, D.C.
   email: aguo890@gwmail.gwu.edu
   phone: "+1 980-337-0681"
