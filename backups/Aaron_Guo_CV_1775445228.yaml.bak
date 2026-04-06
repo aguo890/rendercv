@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
 cv:
-  name: Aaron Brz
+  name: Aaron Guo
   location: Washington, D.C.
   email: aguo890@gwmail.gwu.edu
   phone: "+1 980-337-0681"
@@ -20,19 +20,7 @@ cv:
           - Incoming Controls Engineering Intern at the Colossus facility, supporting the industrial automation and infrastructure for a massive **100,000+ NVIDIA H100 GPU** supercomputer cluster.
           - Will utilize **Python** and **SQL** to interface with **PLCs** and **SCADA** systems, optimizing real-time power distribution and cooling loops for the world's most powerful AI training environment.
           - Slated to engineer responsive, low-latency telemetry dashboards (**HTML**, **Python**) to visualize critical facility metrics, ensuring maximum operational uptime.
-      - company: Multi-State Tax Optimization Platform
-        position: Co-founder & Lead Data Engineer
-        location: Washington, DC
-        date: 2025-10 – Present
-        highlights:
-          - Architected a multi-state tax compliance SaaS (**Python**, **React**) that secured a waitlist of **100+** physicians, mitigating IRS audit risks by automating **100%** of payroll apportionment calculations.
-          - Engineered a financial engine (**SQLAlchemy**, **Alembic**) enabling precise salary allocation across **50+** tax jurisdictions, eliminating manual calculation errors.
-          - Developed a high-performance dashboard (**React/Vite**) with interactive **Recharts**, delivering real-time tax nexus tracking with **<200ms** latency.
-          - Implemented an event-sourced audit logging system to capture **100%** of financial state changes, guaranteeing strict compliance with IRS Accountable Plan regulations.
-          - Designed a robust **FastAPI** backend with **15+** REST endpoints, achieving **~90%** test coverage via **Pytest** to ensure high system reliability.
-          - Integrated a Retrieval-Augmented Generation (**RAG**) engine (**OpenAI API**) to deliver dynamic tax law query responses, improving user information retrieval speed by **~3x**.
-          - "**[Product Demo](https://drive.google.com/file/d/1-6cWK3L9uAJTZqGEh0gtmbpxBO6OLAv_/view?usp=drive_link)**"
-      - company: AI Factory Analytics Platform
+      - company: LineSight - AI Factory Analytics Platform
         position: Co-founder & Lead Data Engineer
         location: Washington, DC
         date: 2025-10 – Present
