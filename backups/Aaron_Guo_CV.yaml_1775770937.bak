@@ -10,6 +10,10 @@ cv:
       username: guo-aaron
     - network: GitHub
       username: aguo890
+  # custom_connections:
+  #   - label: "My Portfolio"
+  #     url: "https://portfolio.com"
+  #     icon: "Link" # Uses FontAwesome icons
   sections:
     experience:
       - company: xAI

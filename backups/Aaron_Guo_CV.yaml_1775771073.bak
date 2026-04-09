@@ -10,6 +10,10 @@ cv:
       username: guo-aaron
     - network: GitHub
       username: aguo890
+  # custom_connections:
+  #   - label: "My Portfolio"
+  #     url: "https://portfolio.com"
+  #     icon: "Link" # Uses FontAwesome icons
   sections:
     experience:
       - company: xAI
@@ -138,7 +142,7 @@ cv:
       - label: Spoken Languages
         details: English (Native), Mandarin (Fluent)
 design:
-  theme: sb2nov
+  theme: engineeringresumes
   page:
     top_margin: 0.5in
     bottom_margin: 0.5in
