@@ -126,7 +126,7 @@ cv:
     projects:
     - name: "Job Automation Suite"
       date: 2026-02 – Present
-      summary: "Architected an open-source automation platform (**2,000+ clones**) that unifies disparate data scraping and document rendering engines into a centralized web application powered by **Python**, **Streamlit**, and **Docker**."
+      summary: "Architected a highly popular open-source automation platform (**2,000+ clones**) that unifies disparate data scraping and document rendering engines into a centralized web application powered by **Python**, **Streamlit**, and **Docker**."
       highlights:
       - "Unified two complex, terminal-based applications into a cohesive monorepo architecture, engineering an intuitive frontend command center using **Python** and **Streamlit** that achieved widespread open-source adoption with over **2,000+** repository clones."
       - "Engineered an asynchronous web scraping and data ingestion pipeline capable of harvesting and standardizing **1,500+** unstructured web records daily, implementing robust error handling to guarantee continuous uptime and zero rate-limiting interruptions."
