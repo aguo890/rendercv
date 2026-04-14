@@ -190,3 +190,7 @@ bin/
 
 # Coverage:
 coverage.md
+
+# Ignore personal CV data but allow templates
+Aaron_Guo_CV.yaml
+!*.yaml.example
