@@ -98,6 +98,28 @@ def handle_template_change():
         load_template_by_name(new_choice)
 
 def load_template_by_name(name):
+    target = DEFAULT_CV_FILE if name == "Aaron's CV (Master)" else GENERIC_TEMPLATE
+    if target.exists():
+        with open(target, encoding="utf-8") as f:
+            content = f.read()
+            st.session_state["cv_content"] = content
+            st.session_state["original_content"] = content
+            st.session_state["show_overwrite_warning"] = False
+    else:
+        st.error(f"Template {name} not found!")
+
+def trigger_render():
+    """Callback to trigger the build process."""
+    result = run_render_cv()
+    if isinstance(result, str): # Error message
+        st.session_state["build_success"] = False
+        st.session_state["build_error"] = result
+    else:
+        st.session_state["build_success"] = result.returncode == 0
+        if result.returncode != 0:
+            st.session_state["build_error"] = result.stderr
+        else:
+            st.session_state["build_error"] = ""
     """Actual loading of template data."""
     target = DEFAULT_CV_FILE if name == "My CV" else GENERIC_TEMPLATE
     if target.exists():
@@ -119,76 +141,31 @@ def confirm_overwrite():
 def main():
     st.set_page_config(page_title="RenderCV Editor", page_icon="📄", layout="wide")
 
-    # Custom CSS for sleek look and floating button
-    st.markdown("""
+    # Initialize state
+    if "focus_mode" not in st.session_state:
+        st.session_state["focus_mode"] = False
+    if "ai_loading" not in st.session_state:
+        st.session_state["ai_loading"] = False
+    if "ai_insights" not in st.session_state:
+        st.session_state["ai_insights"] = None
+
+    # Custom CSS for Focus Mode and Styling
+    st.markdown(f"""
         <style>
-        .block-container {
-            padding-top: 3rem;
+        .block-container {{
+            padding-top: 2rem;
             padding-bottom: 0rem;
             max-width: 100%;
-        }
-        .stButton button {
-            width: 100%;
-            border-radius: 8px;
-            font-weight: bold;
-        }
-        /* Make the text area fill the screen height */
-        .stTextArea textarea {
+        }}
+        .stTextArea textarea {{
             font-family: 'Source Code Pro', monospace;
             border-radius: 8px;
-            height: 85vh !important; /* Force height to 85% of viewport */
-        }
-        /* Floating Download Button - Absolute Position in Column */
-        div[data-testid="column"]:nth-of-type(2) .stDownloadButton {
-            position: absolute !important;
-            top: 10px;
-            right: 20px;
-            z-index: 99999;
-            width: auto !important;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-        }
-        div[data-testid="column"]:nth-of-type(2):hover .stDownloadButton {
-            opacity: 1;
-        }
-        div[data-testid="column"]:nth-of-type(2) .stDownloadButton button {
-            width: auto !important;
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-            background-color: white !important; /* Ensure visibility over images */
-            color: black !important;
-            border: 1px solid #ddd !important;
-        }
-        
-        /* Hide scrollbars */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #888; 
-            border-radius: 4px;
-        }
-        
-        /* Fixed Bottom-Right Download Link */
-        .fixed-download {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 99999;
-            background-color: #ff4b4b;
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .fixed-download:hover {
-            transform: translateY(-2px);
-            box-shadow: 0px 6px 12px rgba(0,0,0,0.3);
-            text-decoration: none;
-        }
+            height: 80vh !important;
+        }}
+        /* Sidebar Styling */
+        [data-testid="stSidebar"] {{
+            background-color: #f8f9fa;
+        }}
         </style>
     """, unsafe_allow_html=True)
 
@@ -197,50 +174,52 @@ def main():
     # --- Sidebar Controls ---
     with st.sidebar:
         st.title("📄 RenderCV")
-        st.caption("v2.7 | Enhanced Editor")
+        st.caption("v2.8 | AI-Enhanced Suite")
         st.divider()
 
-        # Template Selection
-        st.subheader("Templates")
-        st.selectbox(
-            "Select Starting Template",
-            options=["My CV", "Generic Template"],
-            key="template_selection",
-            on_change=handle_template_change
-        )
-        
-        # Overwrite Warning Dialog (Simulation)
-        if st.session_state.get("show_overwrite_warning"):
-            st.warning("⚠️ Unsaved changes detected! Switching will overwrite your current work.")
-            col_c1, col_c2 = st.columns(2)
-            with col_c1:
-                if st.button("Confirm Overwrite", type="primary"):
-                    confirm_overwrite()
-                    st.rerun()
-            with col_c2:
-                if st.button("Cancel"):
-                    st.session_state["show_overwrite_warning"] = False
+        # 1. Trigger Info
+        st.info("💡 **Build PDF**: Click the button below or press **Ctrl+Enter** in the editor.")
+
+        # 2. AI Prompt Guide
+        with st.expander("🤖 AI Ghostwriter (JD Tailoring)", expanded=st.session_state.get("ai_insights") is None):
+            tailor_title = st.text_input("Job Title", placeholder="e.g. Senior Software Engineer", key="jd_title", disabled=st.session_state.ai_loading)
+            tailor_company = st.text_input("Company", placeholder="e.g. Google", key="jd_company", disabled=st.session_state.ai_loading)
+            tailor_jd = st.text_area("Job Description", height=200, placeholder="Paste JD here...", key="jd_text", disabled=st.session_state.ai_loading)
+            
+            if st.button("✨ Tailor with AI", type="primary", use_container_width=True, disabled=st.session_state.ai_loading):
+                if not tailor_jd or not tailor_title:
+                    st.error("Please provide a Job Title and Description.")
+                else:
+                    st.session_state.ai_loading = True
                     st.rerun()
 
         st.divider()
+
+        # 3. Control Group
         st.subheader("Actions")
         
-        col_gen, col_reset = st.columns([1, 1])
-        with col_gen:
-            if st.button("🚀 Build PDF", type="primary", use_container_width=True):
-                trigger_render()
-        
+        # Build Button
+        if st.button("🚀 Build PDF", type="primary", use_container_width=True, disabled=st.session_state.ai_loading):
+            trigger_render()
+            
+        col_draft, col_reset = st.columns(2)
+        with col_draft:
+            if st.button("💾 Save Draft", use_container_width=True, help="Save to tailored_draft.yaml"):
+                try:
+                    with open(BASE_DIR / "tailored_draft.yaml", "w", encoding="utf-8") as f:
+                        f.write(st.session_state["cv_content"])
+                    st.toast("Draft Saved!", icon="✅")
+                except Exception as e:
+                    st.error(f"Save failed: {e}")
+
         with col_reset:
              if st.button("🔄 Reset", use_container_width=True):
                  reset_to_original()
                  st.rerun()
 
-        # Sidebar Download
+        # Download Section
         pdf_path = find_latest_pdf(OUTPUT_DIR)
         if pdf_path:
-            st.divider()
-            st.subheader("Export")
-            
             # Dynamic Filename Logic
             download_fn = pdf_path.name
             try:
@@ -260,38 +239,94 @@ def main():
                     use_container_width=True
                 )
 
+        # 4. View Mode
+        st.divider()
+        st.subheader("View")
+        focus_label = "📖 Focus Mode: ON" if st.session_state.focus_mode else "🖥️ Focus Mode: OFF"
+        if st.button(focus_label, use_container_width=True):
+            st.session_state.focus_mode = not st.session_state.focus_mode
+            st.rerun()
+
+        # 5. Templates
+        with st.expander("📂 Switch Base Template"):
+            st.selectbox(
+                "Select starting structure",
+                options=["My CV", "Generic Template"],
+                key="template_selection",
+                on_change=handle_template_change
+            )
+
         st.divider()
         st.markdown("[Documentation](https://docs.rendercv.com) • [GitHub](https://github.com/rendercv/rendercv)")
 
-    # --- Main Area ---
-    col1, col2 = st.columns([1, 1], gap="medium")
+    # --- Handling AI Loading State ---
+    if st.session_state.ai_loading:
+        with st.spinner("🤖 Ghostwriter is optimizing your CV..."):
+            try:
+                from ai_tailor import generate_tailored_resume
+                brief, tailored_yaml, gaps, reasoning = generate_tailored_resume(
+                    st.session_state["cv_content"],
+                    st.session_state["jd_text"],
+                    st.session_state["jd_title"],
+                    st.session_state["jd_company"]
+                )
+                st.session_state["cv_content"] = tailored_yaml
+                st.session_state["original_content"] = tailored_yaml
+                st.session_state["ai_insights"] = {
+                    "brief": brief,
+                    "gaps": gaps,
+                    "reasoning": reasoning
+                }
+                st.toast("CV Tailored Successfully!", icon="🚀")
+            except Exception as e:
+                st.error(f"AI Tailoring failed: {e}")
+            finally:
+                st.session_state.ai_loading = False
+                st.rerun()
 
-    with col1:
-        st.text_area(
-            "Editor",
-            key="cv_content",
-            height=None,
-            label_visibility="collapsed",
-            on_change=trigger_render
-        )
-        
-        if st.session_state.get("build_success") is False:
-            with st.expander("❌ Failure Logs", expanded=True):
-                st.code(st.session_state.get("build_error", "Unknown Error"), language="text")
+    load_initial_data()
 
-    with col2:
-        pdf_path = find_latest_pdf(OUTPUT_DIR)
-        
-        if pdf_path:
-            # Use Iframe for PDF Preview for high-fidelity/scrolling
-            import base64
-            with open(pdf_path, "rb") as f:
-                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+    # Dynamic Column Layout
+    if st.session_state.focus_mode:
+        # Full Preview Mode
+        preview_col = st.container()
+        with preview_col:
+            pdf_path = find_latest_pdf(OUTPUT_DIR)
+            if pdf_path:
+                import base64
+                with open(pdf_path, "rb") as f:
+                    base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+                pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="900" type="application/pdf"></iframe>'
+                st.markdown(pdf_display, unsafe_allow_html=True)
+            else:
+                 st.info("👈 Press **Ctrl+Enter** in the editor to build your CV.")
+    else:
+        # Split Mode
+        col1, col2 = st.columns([1, 1], gap="medium")
+        with col1:
+            st.text_area(
+                "Editor",
+                key="cv_content",
+                height=None,
+                label_visibility="collapsed",
+                on_change=trigger_render,
+                disabled=st.session_state.ai_loading
+            )
             
-            pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="850" type="application/pdf"></iframe>'
-            st.markdown(pdf_display, unsafe_allow_html=True)
-        else:
-             st.info("👈 Press **Ctrl+Enter** in the editor to build your CV.")
+            if st.session_state.get("build_success") is False:
+                with st.expander("❌ Failure Logs", expanded=True):
+                    st.code(st.session_state.get("build_error", "Unknown Error"), language="text")
+
+        with col2:
+            pdf_path = find_latest_pdf(OUTPUT_DIR)
+            if pdf_path:
+                import base64
+                with open(pdf_path, "rb") as f:
+                    base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+                pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="850" type="application/pdf"></iframe>'
+                st.markdown(pdf_display, unsafe_allow_html=True)
+            else:
+                 st.info("👈 Press **Ctrl+Enter** in the editor to build your CV.")
 
 if __name__ == "__main__":
     main()

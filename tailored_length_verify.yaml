@@ -1,0 +1,168 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
+cv:
+  name: Aaron Guo
+  location: Washington, D.C.
+  email: aguo890@gwmail.gwu.edu
+  phone: "+1 980-337-0681"
+  website: https://aguo890.github.io/
+  social_networks:
+    - network: LinkedIn
+      username: guo-aaron
+    - network: GitHub
+      username: aguo890
+  # custom_connections:
+  #   - label: "My Portfolio"
+  #     url: "https://portfolio.com"
+  #     icon: "Link" # Uses FontAwesome icons
+  sections:
+    experience:
+      - company: xAI
+        position: Controls Engineering Intern
+        location: Memphis, TN
+        date: 2026-06 – 2026-08
+        highlights:
+          - Supported industrial automation for a **100,000+ NVIDIA H100 GPU** 
+            supercomputer cluster using **Python** and **SQL**, optimizing 
+            real-time power distribution and cooling loops.
+          - Engineered responsive telemetry dashboards with **HTML** and 
+            **Python** to visualize critical facility metrics, ensuring maximum 
+            operational uptime.
+      - company: LineSight - AI Factory Analytics Platform
+        position: Co-founder & Lead Data Engineer
+        location: Washington, DC
+        date: 2025-10 – Present
+        highlights:
+          - Architected an event-driven IoT data ingestion pipeline using 
+            **Python** and **Celery**, processing **10,000+** daily rows and 
+            reducing data latency by **95%**.
+          - Optimized high-traffic API endpoints via **SQLAlchemy**, reducing 
+            MES reporting latency from **300ms** to **<50ms**.
+          - Implemented granular **RBAC** for data security, neutralizing OWASP 
+            Top 10 vulnerabilities across multi-tenant architecture.
+      - company: The George Washington University
+        position: Technical Support Assistant
+        location: Washington, DC
+        date: 2025-08 – Present
+        highlights: []
+      - company: Three Stars Fashion Group
+        position: Data Engineer Intern
+        location: Alexandria, Egypt
+        date: 2025-06 – 2025-09
+        highlights:
+          - Automated processing of supplier inventory spreadsheets using 
+            **Python** and **Pandas**, saving **16+ hours** weekly in manual 
+            data cleaning.
+          - Deployed a live dashboard with **Flask** and **Chart.js** to 
+            visualize production line output, enabling instant bottleneck 
+            identification.
+      - company: Sunwater Capital
+        position: Data Science Intern
+        location: North Bethesda, MD
+        date: 2025-01 – 2025-05
+        highlights:
+          - Built an AI validation tool using the **OpenAI API**, cutting manual
+            fact-checking time by **90%**.
+          - Architected an end-to-end data pipeline with **PySpark** and 
+            **SerpAPI**, extracting and cleaning **10,000+** legislative records
+            for reliable analysis.
+      - company: China Fun Restaurants
+        position: Data Analyst / Assistant Manager
+        location: Charlotte, NC
+        date: 2020-09 – 2024-08
+        highlights: []
+    leadership_&_campus_involvement:
+      - company: Association of Computing Machinery (ACM) | George Washington 
+          University
+        position: President
+        date: 2024-08 – Present
+        highlights:
+          - Hosted **10+** professional development workshops covering technical
+            upskilling, **AI/ML** trends, and software engineering best 
+            practices for the university community.
+          - Scaled chapter membership by **100+** active students through 
+            targeted marketing campaigns, campus events, and cross-organization 
+            networking.
+    projects:
+      - name: "Job Automation Suite"
+        date: 2026-02 – Present
+        summary: "Architected an open-source automation platform (**2,000+ clones**)
+          that unifies disparate data scraping and document rendering engines into
+          a centralized web application powered by **Python**, **Streamlit**, and
+          **Docker**."
+        highlights:
+          - Engineered an asynchronous web scraping and data ingestion pipeline 
+            with **Python**, harvesting **1,500+** unstructured records daily 
+            with robust error handling for continuous uptime.
+          - Containerized the multi-service application using **Docker 
+            Compose**, reducing end-to-end processing time from **45 minutes** 
+            to under **2 minutes**.
+      - name: AI-Powered Content Pipeline
+        date: 2025
+        summary: Fully automated system for generating and posting short-form 
+          video content from Reddit stories.
+        highlights:
+          - Automated programmatic video rendering with dynamic captioning using
+            AI tools, boosting viewer retention by **~50%**.
+          - Integrated third-party OAuth APIs to schedule and publish content 
+            synchronously across multiple social media platforms.
+    education:
+      - institution: The George Washington University
+        area: Computer Science
+        degree: Bachelor of Science
+        date: Expected 2026-06
+        location: Washington, DC
+    skills:
+      - label: Focus Skills
+        details: Python, SQL, Docker, FastAPI, OpenAI API, React, TypeScript, 
+          PLCs/SCADA
+      - label: Languages
+        details: Python, SQL, R, TypeScript, JavaScript, Java, Kotlin
+      - label: Frontend
+        details: React, Next.js, Node.js, Vite, Zustand, Recharts, Orval, 
+          HTML/CSS
+      - label: Backend
+        details: FastAPI, Node.js, PostgreSQL, SQLAlchemy, Alembic, Redis, 
+          Celery, REST APIs
+      - label: Data & Controls
+        details: PLCs, SCADA, Prompt Engineering, Agentic AIs, Google AI Studio,
+          OpenAI API
+      - label: Tools & Cloud
+        details: Docker, Git, Makefile, Tailwind CSS, AWS Lambda, Nginx, 
+          Ansible, Bash
+      - label: Spoken Languages
+        details: English (Native), Mandarin (Fluent)
+    summary:
+      - Data engineer and AI enthusiast with expertise in building scalable data
+        pipelines and automation tools using Python, eager to contribute to ML 
+        systems at Anduril. Skilled in software architecture, real-time 
+        analytics, and secure system design for tactical edge environments.
+  theme: sb2nov
+design:
+  theme: sb2nov
+  page:
+    top_margin: 0.5in
+    bottom_margin: 0.5in
+    left_margin: 0.5in
+    right_margin: 0.5in
+    show_footer: false
+  typography:
+    font_size:
+      name: 11pt
+      body: 10pt
+      section_titles: 12pt
+    line_spacing: 0.5em
+  section_titles:
+    space_above: 0.3cm
+    space_below: 0.2cm
+  sections:
+    space_between_regular_entries: 0.2cm
+  header:
+    space_below_name: 0.2cm
+    space_below_headline: 0.2cm
+    space_below_connections: 0.2cm
+  entries:
+    side_space: 0cm
+settings:
+  render_command:
+    pdf_path: "rendercv_output/aaron_guo_master_cv.pdf"
+    png_path: "rendercv_output/aaron_guo_master_cv.png"

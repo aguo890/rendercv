@@ -1,0 +1,221 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
+cv:
+  name: Aaron Guo
+  location: Washington, D.C.
+  email: aguo890@gwmail.gwu.edu
+  phone: "+1 980-337-0681"
+  website: https://aguo890.github.io/
+  social_networks:
+    - network: LinkedIn
+      username: guo-aaron
+    - network: GitHub
+      username: aguo890
+  # custom_connections:
+  #   - label: "My Portfolio"
+  #     url: "https://portfolio.com"
+  #     icon: "Link" # Uses FontAwesome icons
+  sections:
+    experience:
+      - company: xAI
+        position: Controls Engineering Intern
+        location: Memphis, TN
+        date: 2026-06 – 2026-08
+        highlights:
+          - Optimize real-time power distribution and cooling for a **100,000+ 
+            NVIDIA H100 GPU** supercomputer cluster using **Python** and 
+            **SQL**, enhancing infrastructure efficiency.
+          - Engineer low-latency telemetry dashboards with **HTML** and 
+            **Python** to visualize critical metrics, ensuring maximum 
+            operational uptime for AI training environments.
+      - company: LineSight - AI Factory Analytics Platform
+        position: Co-founder & Lead Data Engineer
+        location: Washington, DC
+        date: 2025-10 – Present
+        highlights:
+          - Architected an event-driven IoT data ingestion pipeline with 
+            **Python** and **Celery**, processing **10,000+** daily rows and 
+            reducing data latency by **95%**.
+          - Optimized high-traffic API endpoints using **SQLAlchemy**, cutting 
+            MES reporting latency from **300ms** to **<50ms** for **6,000+** 
+            employees.
+      - company: The George Washington University
+        position: Technical Support Assistant
+        location: Washington, DC
+        date: 2025-08 – Present
+        highlights:
+          - Resolved **15+** daily technical tickets to maintain system uptime, 
+            reducing issue resolution time by **~20%** through effective 
+            escalation.
+          - Authored internal knowledge base articles, accelerating new 
+            technician onboarding by **~30%**.
+      - company: Three Stars Fashion Group
+        position: Data Engineer Intern
+        location: Alexandria, Egypt
+        date: 2025-06 – 2025-09
+        highlights:
+          - Automated supplier inventory processing with **Python** and 
+            **Pandas**, saving **16+ hours** weekly in manual data cleaning.
+          - Deployed a live dashboard using **Flask** and **Chart.js** to 
+            visualize production output, enabling instant bottleneck 
+            identification.
+      - company: Sunwater Capital
+        position: Data Science Intern
+        location: North Bethesda, MD
+        date: 2025-01 – 2025-05
+        highlights:
+          - Built an end-to-end data pipeline with **PySpark** and **SerpAPI**, 
+            extracting **~10,000+** legislative records for reliable analysis.
+          - Developed an AI validation tool with the **OpenAI API**, cutting 
+            manual fact-checking time by **90%**.
+      - company: China Fun Restaurants
+        position: Data Analyst / Assistant Manager
+        location: Charlotte, NC
+        date: 2020-09 – 2024-08
+        highlights:
+          - Implemented a time-series forecasting model on sales data, reducing 
+            food waste by **14%** and increasing profit margins by **7%**.
+          - Analyzed a **200+** item menu with **Tableau** and **Power BI**, 
+            driving data-backed decisions that generated an additional 
+            **$5,000** monthly revenue.
+    leadership_&_campus_involvement:
+      - company: Association of Computing Machinery (ACM) | George Washington 
+          University
+        position: President
+        date: 2024-08 – Present
+        highlights:
+          - Hosted **10+** professional development workshops covering technical
+            upskilling, **AI/ML** trends, and software engineering best 
+            practices for the university community.
+          - Scaled chapter membership by **100+** active students through 
+            targeted marketing campaigns, campus events, and cross-organization 
+            networking.
+    projects:
+      - name: "Job Automation Suite"
+        date: 2026-02 – Present
+        summary: "Architected an open-source automation platform (**2,000+ clones**)
+          that unifies disparate data scraping and document rendering engines into
+          a centralized web application powered by **Python**, **Streamlit**, and
+          **Docker**."
+        highlights:
+          - Unified complex applications into a monorepo using **Python** and 
+            **Streamlit**, achieving **2,000+** repository clones and reducing 
+            end-to-end processing time from **45** minutes to under **2** 
+            minutes with **Docker**.
+      - name: OpenClaw Agentic Suite (Workflow Optimization)
+        date: 2026-01 – Present
+        summary: A highly optimized, multi-agent framework configured to 
+          drastically accelerate personal software engineering and research 
+          lifecycles.
+        highlights:
+          - Customized the OpenClaw architecture to act as a virtual engineering
+            department, transitioning personal workflow into a managerial role 
+            orchestrating a specialized team of AI "experts."
+          - Engineered parallel execution branches to automate code generation, 
+            deep-dive research, and daily reporting, achieving a **10x** 
+            increase in personal shipping velocity.
+          - Optimized the agentic suite to mimic the rapid iteration cycles of 
+            elite AI labs, freeing up cognitive bandwidth to focus strictly on 
+            high-level systems architecture and strategic problem-solving.
+      - name: "JEGA: Academic Test Facility"
+        date: 2025-10 – Present
+        summary: "Architected an open-source, full-stack proctoring platform designed
+          to secure academic testing environments through real-time telemetry, spatial
+          mapping, and dynamic classroom administration. Tech Stack: **React (TS)**,
+          **FastAPI**, **MySQL**, **Docker**, **Linux**, **Bash**, **Ansible**, **SSH**,
+          **LDAP**."
+        highlights:
+          - Engineered a highly concurrent full-stack architecture with **React 
+            (TypeScript)** and **FastAPI**, sustaining sub-**50ms** API response
+            times and automating provisioning of **40+** workstations with 
+            **Ansible** and **Bash**.
+      - name: AI-Powered Content Pipeline
+        date: 2025
+        summary: Fully automated system for generating and posting short-form 
+          video content from Reddit stories.
+        highlights:
+          - Automated programmatic video rendering and implemented dynamic, 
+            dyslexic-friendly captioning to boost viewer retention by **~50%**.
+          - Integrated third-party OAuth APIs to schedule and publish content 
+            synchronously across TikTok, Instagram Reels, and YouTube Shorts.
+          - Engineered an API key rotation algorithm for **ElevenLabs**, 
+            optimizing costs for high-volume Text-to-Speech generation.
+      - name: Graduate Application System
+        date: 2024
+        summary: A full-stack management platform for tracking graduate school 
+          application lifecycles.
+        highlights:
+          - Architected a centralized user dashboard enabling applicants to 
+            track submission stages, deadlines, and requirements.
+          - Engineered a document management module with automated status 
+            webhooks to alert users of missing materials or timeline updates.
+      - name: Statistical Analysis in Esports
+        date: 2022
+        summary: Research paper analyzing the impact of resource accumulation on
+          game outcomes in League of Legends.
+        highlights:
+          - Authored and published quantitative findings in the Journal of 
+            Student Research (JSR) as a peer-reviewed preprint.
+          - Applied rigorous statistical modeling techniques to analyze the 
+            correlation between early-game gold differentials and ultimate match
+            win rates.
+    education:
+      - institution: The George Washington University
+        area: Computer Science
+        degree: Bachelor of Science
+        date: Expected 2026-06
+        location: Washington, DC
+    skills:
+      - label: Focus Skills
+        details: Python, Docker, SQL, Ansible, Bash, PLCs
+      - label: Languages
+        details: Python, SQL, R, TypeScript, JavaScript, Java, Kotlin
+      - label: Frontend
+        details: React, Next.js, Node.js, Vite, Zustand, Recharts, Orval, 
+          HTML/CSS
+      - label: Backend
+        details: FastAPI, Node.js, PostgreSQL, SQLAlchemy, Alembic, Redis, 
+          Celery, REST APIs
+      - label: Data & Controls
+        details: PLCs, SCADA, Prompt Engineering, Agentic AIs, Google AI Studio,
+          OpenAI API
+      - label: Tools & Cloud
+        details: Docker, Git, Makefile, Tailwind CSS, AWS Lambda, Nginx, 
+          Ansible, Bash
+      - label: Spoken Languages
+        details: English (Native), Mandarin (Fluent)
+    summary:
+      - Incoming Controls Engineering Intern at xAI, poised to optimize 
+        distributed training infrastructure for a **100,000+ NVIDIA H100 GPU** 
+        supercomputer cluster. Brings proven expertise in **Python**-driven 
+        systems integration and a track record of shipping complex software 
+        projects independently.
+  theme: sb2nov
+design:
+  theme: sb2nov
+  page:
+    top_margin: 0.5in
+    bottom_margin: 0.5in
+    left_margin: 0.5in
+    right_margin: 0.5in
+    show_footer: false
+  typography:
+    font_size:
+      name: 11pt
+      body: 10pt
+      section_titles: 12pt
+    line_spacing: 0.5em
+  section_titles:
+    space_above: 0.3cm
+    space_below: 0.2cm
+  sections:
+    space_between_regular_entries: 0.2cm
+  header:
+    space_below_name: 0.2cm
+    space_below_headline: 0.2cm
+    space_below_connections: 0.2cm
+  entries:
+    side_space: 0cm
+settings:
+  render_command:
+    pdf_path: "rendercv_output/aaron_guo_master_cv.pdf"
+    png_path: "rendercv_output/aaron_guo_master_cv.png"
