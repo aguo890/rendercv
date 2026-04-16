@@ -7,8 +7,9 @@ import yaml as pyyaml
 
 # --- Constants & Paths ---
 BASE_DIR = Path(__file__).resolve().parent
-DEFAULT_CV_FILE = BASE_DIR / "Aaron_Guo_CV.yaml"
+DEFAULT_CV_FILE = BASE_DIR / "Master_CV.yaml"
 GENERIC_TEMPLATE = BASE_DIR / "template.yaml"
+
 TEMP_YAML_FILE = BASE_DIR / "temp_cv.yaml"
 OUTPUT_DIR = BASE_DIR / "rendercv_output"
 
@@ -98,7 +99,8 @@ def handle_template_change():
         load_template_by_name(new_choice)
 
 def load_template_by_name(name):
-    target = DEFAULT_CV_FILE if name == "Aaron's CV (Master)" else GENERIC_TEMPLATE
+    target = DEFAULT_CV_FILE if name == "My CV (Master)" else GENERIC_TEMPLATE
+
     if target.exists():
         with open(target, encoding="utf-8") as f:
             content = f.read()
@@ -251,7 +253,8 @@ def main():
         with st.expander("📂 Switch Base Template"):
             st.selectbox(
                 "Select starting structure",
-                options=["My CV", "Generic Template"],
+                options=["My CV (Master)", "Generic Template"],
+
                 key="template_selection",
                 on_change=handle_template_change
             )
