@@ -1,43 +1,44 @@
-import glob
-import os
 import shutil
 import subprocess
+from pathlib import Path
 
 import streamlit as st
 import yaml as pyyaml
 
-# --- Constants ---
-DEFAULT_CV_FILE = "Aaron_Guo_CV.yaml"
-TEMP_YAML_FILE = "temp_cv.yaml"
-OUTPUT_DIR = "rendercv_output"
+# --- Constants & Paths ---
+BASE_DIR = Path(__file__).resolve().parent
+DEFAULT_CV_FILE = BASE_DIR / "Aaron_Guo_CV.yaml"
+GENERIC_TEMPLATE = BASE_DIR / "template.yaml"
+TEMP_YAML_FILE = BASE_DIR / "temp_cv.yaml"
+OUTPUT_DIR = BASE_DIR / "rendercv_output"
 
 # --- Helper Functions ---
 def load_initial_data():
     """Loads the default CV YAML into session state if not already present."""
     if "cv_content" not in st.session_state:
-        if os.path.exists(DEFAULT_CV_FILE):
-            with open(DEFAULT_CV_FILE, encoding="utf-8") as f:
-                st.session_state["cv_content"] = f.read()
+        # Check for Aaron's CV first, then fallback to generic
+        target_file = DEFAULT_CV_FILE if DEFAULT_CV_FILE.exists() else GENERIC_TEMPLATE
+        
+        if target_file.exists():
+            with open(target_file, encoding="utf-8") as f:
+                content = f.read()
+                st.session_state["cv_content"] = content
+                st.session_state["original_content"] = content
         else:
             st.session_state["cv_content"] = "# Default CV file not found.\n# Paste your RenderCV YAML here."
+            st.session_state["original_content"] = st.session_state["cv_content"]
 
 def find_latest_pdf(directory):
     """Finds the most recently modified PDF in the output directory."""
-    # RenderCV output structure can vary, so we search recursively if needed
-    # For now, we stick to the plan's flat search in the output folder
-    search_pattern = os.path.join(directory, '*.pdf')
-    list_of_files = glob.glob(search_pattern)
-    
-    if not list_of_files:
-        # Fallback: RenderCV might put it in a subdirectory named after the person
-        # Let's try a recursive search if the flat search fails
-        search_pattern_recursive = os.path.join(directory, '**', '*.pdf')
-        list_of_files = glob.glob(search_pattern_recursive, recursive=True)
-    
-    if not list_of_files:
+    directory = Path(directory)
+    if not directory.exists():
         return None
         
-    return max(list_of_files, key=os.path.getctime)
+    pdf_files = list(directory.rglob("*.pdf"))
+    if not pdf_files:
+        return None
+        
+    return max(pdf_files, key=lambda p: p.stat().st_ctime)
 
 def run_render_cv():
     """Saves the temp file and runs the rendercv command."""
@@ -45,26 +46,27 @@ def run_render_cv():
     with open(TEMP_YAML_FILE, "w", encoding="utf-8") as f:
         f.write(st.session_state["cv_content"])
     
+    # Update original_content on successful build if we want to treat build as "save"
+    # Actually, let's keep it separate for now.
+    
     # 2. Clean output directory to prevent stale files
-    if os.path.exists(OUTPUT_DIR):
+    if OUTPUT_DIR.exists():
         try:
             shutil.rmtree(OUTPUT_DIR)
         except Exception as e:
-            # If we can't delete (e.g. file open), we return an error to notify user
             return f"Error cleaning output directory: {e}. Please ensure no PDFs/Images are open."
 
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    OUTPUT_DIR.mkdir(exist_ok=True)
 
     # 3. Run the command
-    # We explicitly verify the output directory exists or let rendercv create it
-    cmd = ["rendercv", "render", TEMP_YAML_FILE]
+    cmd = ["rendercv", "render", str(TEMP_YAML_FILE)]
     
     try:
         result = subprocess.run(
             cmd,
             capture_output=True,
             text=True,
-            check=False # We handle the return code manually
+            check=False
         )
         return result
     except Exception as e:
@@ -72,29 +74,46 @@ def run_render_cv():
 
 def reset_to_original():
     """Resets the editor content to the file on disk."""
-    if os.path.exists(DEFAULT_CV_FILE):
+    if DEFAULT_CV_FILE.exists():
         with open(DEFAULT_CV_FILE, encoding="utf-8") as f:
-            st.session_state["cv_content"] = f.read()
+            content = f.read()
+            st.session_state["cv_content"] = content
+            st.session_state["original_content"] = content
         st.toast("Reset to original file!", icon="🔄")
     else:
-        st.error(f"Original file {DEFAULT_CV_FILE} not found!")
+        st.error(f"Original file {DEFAULT_CV_FILE.name} not found!")
 
-# --- Helper Wrapper for Callback ---
-def trigger_render():
-    """Callback to run render on text area change."""
-    with st.spinner("Auto-rendering..."):
-        result = run_render_cv()
-        if isinstance(result, subprocess.CompletedProcess) and result.returncode == 0:
-            st.toast("Auto-build Successful!", icon="✅")
-            st.session_state["build_success"] = True
-        else:
-            st.toast("Auto-build Failed!", icon="❌")
-            st.session_state["build_success"] = False
-            if isinstance(result, subprocess.CompletedProcess):
-                # Combine stdout and stderr to capture all failure details
-                st.session_state["build_error"] = f"STDOUT:\n{result.stdout}\n\nSTDERR:\n{result.stderr}"
-            else:
-                st.session_state["build_error"] = str(result)
+# --- Callbacks ---
+def handle_template_change():
+    """Logic to handle template switching with data loss prevention."""
+    new_choice = st.session_state.get("template_selection")
+    # If content is modified, don't overwrite immediately
+    has_changes = st.session_state.get("cv_content") != st.session_state.get("original_content")
+    
+    if has_changes:
+        st.session_state["pending_template_load"] = new_choice
+        st.session_state["show_overwrite_warning"] = True
+    else:
+        # Safe to load
+        load_template_by_name(new_choice)
+
+def load_template_by_name(name):
+    """Actual loading of template data."""
+    target = DEFAULT_CV_FILE if name == "My CV" else GENERIC_TEMPLATE
+    if target.exists():
+        with open(target, encoding="utf-8") as f:
+            content = f.read()
+            st.session_state["cv_content"] = content
+            st.session_state["original_content"] = content
+        st.toast(f"Loaded {name}!", icon="📥")
+    else:
+        st.error(f"Template {target.name} not found.")
+
+def confirm_overwrite():
+    """Confirmed overwrite by user."""
+    load_template_by_name(st.session_state["pending_template_load"])
+    st.session_state["show_overwrite_warning"] = False
+    st.session_state["pending_template_load"] = None
 
 # --- Main App ---
 def main():
@@ -178,15 +197,37 @@ def main():
     # --- Sidebar Controls ---
     with st.sidebar:
         st.title("📄 RenderCV")
-        st.caption("v2.6 | Streamlit Editor")
+        st.caption("v2.7 | Enhanced Editor")
         st.divider()
 
+        # Template Selection
+        st.subheader("Templates")
+        st.selectbox(
+            "Select Starting Template",
+            options=["My CV", "Generic Template"],
+            key="template_selection",
+            on_change=handle_template_change
+        )
+        
+        # Overwrite Warning Dialog (Simulation)
+        if st.session_state.get("show_overwrite_warning"):
+            st.warning("⚠️ Unsaved changes detected! Switching will overwrite your current work.")
+            col_c1, col_c2 = st.columns(2)
+            with col_c1:
+                if st.button("Confirm Overwrite", type="primary"):
+                    confirm_overwrite()
+                    st.rerun()
+            with col_c2:
+                if st.button("Cancel"):
+                    st.session_state["show_overwrite_warning"] = False
+                    st.rerun()
+
+        st.divider()
         st.subheader("Actions")
         
-        # Generator Button
         col_gen, col_reset = st.columns([1, 1])
         with col_gen:
-            if st.button("🚀 Generate PDF", type="primary", use_container_width=True):
+            if st.button("🚀 Build PDF", type="primary", use_container_width=True):
                 trigger_render()
         
         with col_reset:
@@ -194,74 +235,63 @@ def main():
                  reset_to_original()
                  st.rerun()
 
-        st.divider()
-        st.subheader("Data")
-        
-        # File Uploader
-        uploaded_file = st.file_uploader("Upload YAML", type=["yaml", "yml"])
-        if uploaded_file is not None:
-            string_data = uploaded_file.getvalue().decode("utf-8")
-            st.session_state["cv_content"] = string_data
-            st.toast("File uploaded successfully!", icon="📂")
+        # Sidebar Download
+        pdf_path = find_latest_pdf(OUTPUT_DIR)
+        if pdf_path:
+            st.divider()
+            st.subheader("Export")
+            
+            # Dynamic Filename Logic
+            download_fn = pdf_path.name
+            try:
+                parsed = pyyaml.safe_load(st.session_state["cv_content"])
+                if parsed and 'cv' in parsed and 'name' in parsed['cv']:
+                    name_slug = parsed['cv']['name'].replace(" ", "_").lower()
+                    download_fn = f"{name_slug}_cv.pdf"
+            except:
+                pass
+
+            with open(pdf_path, "rb") as f:
+                st.download_button(
+                    label="⬇️ Download PDF",
+                    data=f,
+                    file_name=download_fn,
+                    mime="application/pdf",
+                    use_container_width=True
+                )
 
         st.divider()
         st.markdown("[Documentation](https://docs.rendercv.com) • [GitHub](https://github.com/rendercv/rendercv)")
 
     # --- Main Area ---
-    # Use container to control width? Streamlit 'wide' layout is usually good.
     col1, col2 = st.columns([1, 1], gap="medium")
 
     with col1:
         st.text_area(
             "Editor",
             key="cv_content",
-            height=None, # Height is controlled by CSS
+            height=None,
             label_visibility="collapsed",
-            on_change=trigger_render # Triggers when user presses Ctrl+Enter
+            on_change=trigger_render
         )
         
-        # Show Error Logs if failed
         if st.session_state.get("build_success") is False:
             with st.expander("❌ Failure Logs", expanded=True):
                 st.code(st.session_state.get("build_error", "Unknown Error"), language="text")
 
     with col2:
-        # Check for PDF to show download button
         pdf_path = find_latest_pdf(OUTPUT_DIR)
         
-        # Find and Display PNGs
-        png_files = sorted(glob.glob(os.path.join(OUTPUT_DIR, "*.png")))
-        
-        if png_files:
-            # Scrollable container for preview
-            with st.container(height=850, border=True):
-                for i, png_file in enumerate(png_files):
-                    st.image(png_file, caption=f"Page {i+1}", use_container_width=True, output_format="PNG")
+        if pdf_path:
+            # Use Iframe for PDF Preview for high-fidelity/scrolling
+            import base64
+            with open(pdf_path, "rb") as f:
+                base64_pdf = base64.b64encode(f.read()).decode('utf-8')
+            
+            pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="850" type="application/pdf"></iframe>'
+            st.markdown(pdf_display, unsafe_allow_html=True)
         else:
-            if not pdf_path:
-                 st.info("👈 Press **Ctrl+Enter** in the editor to build your CV.")
-
-    # --- Fixed Download Link ---
-    if pdf_path:
-        import base64
-        # Derive download filename from YAML settings if available
-        download_name = os.path.basename(pdf_path)
-        try:
-            parsed = pyyaml.safe_load(st.session_state.get("cv_content", ""))
-            if parsed and isinstance(parsed, dict):
-                custom_path = (parsed
-                    .get("settings", {})
-                    .get("render_command", {})
-                    .get("pdf_path", ""))
-                if custom_path:
-                    download_name = os.path.basename(custom_path)
-        except Exception:
-            pass
-        with open(pdf_path, "rb") as f:
-            pdf_bytes = f.read()
-            b64 = base64.b64encode(pdf_bytes).decode()
-            href = f'<a href="data:application/pdf;base64,{b64}" download="{download_name}" class="fixed-download">⬇️ Download PDF</a>'
-            st.markdown(href, unsafe_allow_html=True)
+             st.info("👈 Press **Ctrl+Enter** in the editor to build your CV.")
 
 if __name__ == "__main__":
     main()

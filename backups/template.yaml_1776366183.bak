@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
+cv:
+  name: Your Name
+  location: City, Country
+  email: your.email@example.com
+  phone: "+0 000-000-0000"
+  website: https://yourportfolio.com
+  social_networks:
+  - network: LinkedIn
+    username: yourusername
+  - network: GitHub
+    username: yourusername
+  sections:
+    experience:
+    - company: Company Name
+      position: Job Title
+      location: Location
+      date: 2023-01 – Present
+      highlights:
+      - Accomplishment 1 with quantifiable results.
+      - Accomplishment 2 using specific skills or tools.
+    education:
+    - institution: University Name
+      area: Field of Study
+      degree: Degree Name
+      date: 2019-09 – 2023-05
+    skills:
+    - label: Languages
+      details: Python, JavaScript, SQL
+    - label: Tools
+      details: Docker, Git, Streamlit
+  theme: sb2nov
+design:
+  theme: sb2nov
+  page:
+    top_margin: 0.5in
+    bottom_margin: 0.5in
+    left_margin: 0.5in
+    right_margin: 0.5in
