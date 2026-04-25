@@ -242,3 +242,4 @@ settings:
   render_command:
     pdf_path: "rendercv_output/john_doe_master_cv.pdf"
     png_path: "rendercv_output/john_doe_master_cv.png"
+
