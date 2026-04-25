@@ -17,7 +17,7 @@ OUTPUT_DIR = BASE_DIR / "rendercv_output"
 def load_initial_data():
     """Loads the default CV YAML into session state if not already present."""
     if "cv_content" not in st.session_state:
-        # Check for Aaron's CV first, then fallback to generic
+        # Load the user's Master CV if it exists, otherwise fallback to generic template
         target_file = DEFAULT_CV_FILE if DEFAULT_CV_FILE.exists() else GENERIC_TEMPLATE
         
         if target_file.exists():
