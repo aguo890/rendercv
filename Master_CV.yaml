@@ -3,7 +3,7 @@ cv:
   name: John Doe
   location: New York, NY
   email: johndoe@example.com
-  phone: "+1 555-010-0000"
+  phone: "+1 202-555-0123"
   website: https://johndoe.example.com
   social_networks:
   - network: LinkedIn
