@@ -1,0 +1,172 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
+cv:
+  name: Aaron Guo
+  location: Washington, D.C.
+  email: aguo890@gwmail.gwu.edu
+  phone: "+1 980-337-0681"
+  website: https://aguo890.github.io/
+  social_networks:
+    - network: LinkedIn
+      username: guo-aaron
+    - network: GitHub
+      username: aguo890
+  # custom_connections:
+  #   - label: "My Portfolio"
+  #     url: "https://portfolio.com"
+  #     icon: "Link" # Uses FontAwesome icons
+  sections:
+    experience:
+      - company: xAI
+        position: Controls Engineering Intern
+        location: Memphis, TN
+        date: 2026-06 – 2026-08
+        highlights: []
+      - company: LineSight - AI Factory Analytics Platform
+        position: Co-founder & Lead Data Engineer
+        location: Washington, DC
+        date: 2025-10 – Present
+        highlights:
+          - Architected event-driven IoT data ingestion pipeline (**Python**, 
+            **Celery**) parsing telemetry from **PLCs/SCADA**, processing 
+            **10,000+** daily rows and reducing data latency by **95%**.
+          - Engineered real-time analytics dashboard (**React**, **Vite**) 
+            monitoring **OEE** across **60+** synchronous production lines, 
+            sustaining **60 FPS** on legacy hardware.
+          - Optimized high-traffic API endpoints via **SQLAlchemy**, reducing 
+            MES reporting latency from **300ms** to **<50ms**.
+      - company: The George Washington University
+        position: Technical Support Assistant
+        location: Washington, DC
+        date: 2025-08 – Present
+        highlights: []
+      - company: Three Stars Fashion Group
+        position: Data Engineer Intern
+        location: Alexandria, Egypt
+        date: 2025-06 – 2025-09
+        highlights:
+          - Automated supplier inventory processing using **Python** and 
+            **Pandas**, saving **16+ hours** weekly.
+          - Deployed live dashboard (**Flask**, **Chart.js**) to visualize 
+            production line bottlenecks.
+          - Designed serverless alert system (**AWS Lambda**, **SNS**) cutting 
+            communication delays by **~80%**.
+      - company: Sunwater Capital
+        position: Data Science Intern
+        location: North Bethesda, MD
+        date: 2025-01 – 2025-05
+        highlights:
+          - Architected end-to-end data pipeline (**PySpark**, **SerpAPI**) 
+            automating extraction and cleaning of **~10,000+** legislative 
+            records.
+          - Built AI validation tool utilizing **OpenAI API**, cutting manual 
+            fact-checking time by **90%**.
+          - Developed **Python** web scraper with **NLP** to extract strategic 
+            insights from unstructured hearing transcripts.
+      - company: China Fun Restaurants
+        position: Data Analyst / Assistant Manager
+        location: Charlotte, NC
+        date: 2020-09 – 2024-08
+        highlights: []
+    leadership_&_campus_involvement:
+      - company: Association of Computing Machinery (ACM) | George Washington 
+          University
+        position: President
+        date: 2024-08 – Present
+        highlights:
+          - Hosted **10+** professional development workshops covering technical
+            upskilling, **AI/ML** trends, and software engineering best 
+            practices for the university community.
+          - Scaled chapter membership by **100+** active students through 
+            targeted marketing campaigns, campus events, and cross-organization 
+            networking.
+    projects:
+      - name: "Job Automation Suite"
+        date: 2026-02 – Present
+        summary: "Architected an open-source automation platform (**2,000+ clones**)
+          that unifies disparate data scraping and document rendering engines into
+          a centralized web application powered by **Python**, **Streamlit**, and
+          **Docker**."
+        highlights:
+          - Unified terminal-based apps into monorepo with **Python**, 
+            **Streamlit**, **Docker**; achieved **2,000+** clones.
+          - Engineered async web scraping pipeline harvesting **1,500+** 
+            unstructured records daily.
+          - Architected autonomous document generation with **LLM 
+            orchestration** and **Docker Compose** deployment, reducing 
+            processing time from 45 min to under 2 min.
+      - name: "JEGA: Academic Test Facility"
+        date: 2025-10 – Present
+        summary: "Architected an open-source, full-stack proctoring platform designed
+          to secure academic testing environments through real-time telemetry, spatial
+          mapping, and dynamic classroom administration. Tech Stack: **React (TS)**,
+          **FastAPI**, **MySQL**, **Docker**, **Linux**, **Bash**, **Ansible**, **SSH**,
+          **LDAP**."
+        highlights:
+          - Engineered full-stack proctoring platform (**React (TS)**, 
+            **FastAPI**, **MySQL**) with sub-**50ms** API responses.
+          - Automated bare-metal provisioning of **40+** workstations using 
+            **Bash** and **Ansible**, reducing deployment time by **85%**.
+          - Containerized deployment via **Docker** with **LDAP** integration 
+            and **RBAC** for **500+** accounts.
+    education:
+      - institution: The George Washington University
+        area: Computer Science
+        degree: Bachelor of Science
+        date: Expected 2026-06
+        location: Washington, DC
+    skills:
+      - label: Focus Skills
+        details: Python, Docker, FastAPI, React, SQL, PySpark, AWS Lambda, 
+          Ansible, Linux, IoT Data Pipelines
+      - label: Languages
+        details: Python, SQL, R, TypeScript, JavaScript, Java, Kotlin
+      - label: Frontend
+        details: React, Next.js, Node.js, Vite, Zustand, Recharts, Orval, 
+          HTML/CSS
+      - label: Backend
+        details: FastAPI, Node.js, PostgreSQL, SQLAlchemy, Alembic, Redis, 
+          Celery, REST APIs
+      - label: Data & Controls
+        details: PLCs, SCADA, Prompt Engineering, Agentic AIs, Google AI Studio,
+          OpenAI API
+      - label: Tools & Cloud
+        details: Docker, Git, Makefile, Tailwind CSS, AWS Lambda, Nginx, 
+          Ansible, Bash
+      - label: Spoken Languages
+        details: English (Native), Mandarin (Fluent)
+    summary:
+      - Data engineer and full-stack developer with proven expertise in building
+        real-time data pipelines, deploying containerized applications, and 
+        automating workflows. Seeking to apply strong Python, Docker, and 
+        systems integration skills to machine learning engineering at the 
+        tactical edge.
+  theme: sb2nov
+design:
+  theme: sb2nov
+  page:
+    top_margin: 0.5in
+    bottom_margin: 0.5in
+    left_margin: 0.5in
+    right_margin: 0.5in
+    show_footer: false
+  typography:
+    font_size:
+      name: 11pt
+      body: 10pt
+      section_titles: 12pt
+    line_spacing: 0.5em
+  section_titles:
+    space_above: 0.3cm
+    space_below: 0.2cm
+  sections:
+    space_between_regular_entries: 0.2cm
+  header:
+    space_below_name: 0.2cm
+    space_below_headline: 0.2cm
+    space_below_connections: 0.2cm
+  entries:
+    side_space: 0cm
+settings:
+  render_command:
+    pdf_path: "rendercv_output/aaron_guo_master_cv.pdf"
+    png_path: "rendercv_output/aaron_guo_master_cv.png"
