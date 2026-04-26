@@ -1,127 +1,124 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.5/schema.json
 cv:
-  name: Aaron Guo
-  location: Washington, D.C.
-  email: aguo890@gwmail.gwu.edu
-  phone: "+1 980-337-0681"
-  website: https://aguo890.github.io/
+  name: John Doe
+  location: New York, NY
+  email: johndoe@example.com
+  phone: "+1 202-555-0123"
+  website: https://johndoe.example.com
   social_networks:
   - network: LinkedIn
-    username: guo-aaron
+    username: johndoe
   - network: GitHub
-    username: aguo890
+    username: johndoe
   # custom_connections:
   #   - label: "My Portfolio"
-  #     url: "https://portfolio.com"
+  #     url: "https://portfolio.example.com"
   #     icon: "Link" # Uses FontAwesome icons
   sections:
     experience:
-    - company: xAI
+    - company: Acme Robotics Inc
       position: Controls Engineering Intern
-      location: Memphis, TN
+      location: Austin, TX
       date: 2026-06 – 2026-08
       highlights:
-      - Incoming Controls Engineering Intern at the Colossus facility, 
-        supporting the industrial automation and infrastructure for a massive 
-        **100,000+ NVIDIA H100 GPU** supercomputer cluster.
-      - Will utilize **Python** and **SQL** to interface with **PLCs** and 
-        **SCADA** systems, optimizing real-time power distribution and cooling 
-        loops for the world's most powerful AI training environment.
-      - Slated to engineer responsive, low-latency telemetry dashboards 
-        (**HTML**, **Python**) to visualize critical facility metrics, ensuring 
+      - Incoming Controls Engineering Intern supporting industrial automation
+        and infrastructure for a large-scale **10,000+ node** compute cluster.
+      - Will utilize **Python** and **SQL** to interface with **PLCs** and
+        **SCADA** systems, optimizing real-time power distribution and cooling
+        loops for high-performance computing environments.
+      - Slated to engineer responsive, low-latency telemetry dashboards
+        (**HTML**, **Python**) to visualize critical facility metrics, ensuring
         maximum operational uptime.
-    - company: LineSight - AI Factory Analytics Platform
+    - company: BrightLine Analytics
       position: Co-founder & Lead Data Engineer
-      location: Washington, DC
+      location: New York, NY
       date: 2025-10 – Present
       highlights:
-      - Orchestrated an enterprise **ERP** and **MES** solution for a **$50M+** 
-        ARR textile manufacturer, digitizing shop-floor operations for 
+      - Orchestrated an enterprise **ERP** and **MES** solution for a **$50M+**
+        ARR textile manufacturer, digitizing shop-floor operations for
         **6,000+** employees.
-      - Architected an event-driven IoT data ingestion pipeline (**Python**, 
-        **Celery**) parsing telemetry from **PLCs/SCADA**, processing 
+      - Architected an event-driven IoT data ingestion pipeline (**Python**,
+        **Celery**) parsing telemetry from **PLCs/SCADA**, processing
         **10,000+** daily rows and reducing data latency by **95%**.
-      - Engineered a real-time analytics dashboard (**React**, **Vite**) 
-        monitoring **OEE** and throughput across **60+** synchronous production 
+      - Engineered a real-time analytics dashboard (**React**, **Vite**)
+        monitoring **OEE** and throughput across **60+** synchronous production
         lines, sustaining **60 FPS** on legacy hardware.
-      - Designed a Zero-Trust multi-tenant architecture isolating operational 
-        data across **5** facilities, ensuring strict data sovereignty and 
+      - Designed a Zero-Trust multi-tenant architecture isolating operational
+        data across **5** facilities, ensuring strict data sovereignty and
         industrial cybersecurity compliance.
       - Optimized high-traffic API endpoints via **SQLAlchemy** (selectin/joined
         loading), eliminating N+1 bottlenecks and reducing MES reporting latency
         from **300ms** to **<50ms**.
-      - Implemented granular **RBAC** mapped to factory floor hierarchies, 
-        neutralizing OWASP Top 10 vulnerabilities and securing sensitive 
+      - Implemented granular **RBAC** mapped to factory floor hierarchies,
+        neutralizing OWASP Top 10 vulnerabilities and securing sensitive
         production data.
-      - Automated defect rate and yield tracking workflows, translating raw 
-        shop-floor data into actionable insights that drove continuous 
+      - Automated defect rate and yield tracking workflows, translating raw
+        shop-floor data into actionable insights that drove continuous
         production optimization.
-      - "**[Product Demo](https://drive.google.com/file/d/15tm-84NbP3e_RE5n8vTv97zNvIOZiah1/view?usp=drive_link)**"
-    - company: The George Washington University
+    - company: Northside University
       position: Technical Support Assistant
-      location: Washington, DC
+      location: New York, NY
       date: 2025-08 – Present
       highlights:
-      - Resolved **15+** daily Tier 1/2 technical tickets, maintaining system 
+      - Resolved **15+** daily Tier 1/2 technical tickets, maintaining system
         uptime for university faculty and staff across core IT infrastructure.
       - Facilitated technical escalations between non-technical stakeholders and
         Tier 3 IT engineers, reducing average issue resolution time by **~20%**.
-      - Authored comprehensive internal knowledge base articles, standardizing 
-        troubleshooting protocols and accelerating onboarding for new 
+      - Authored comprehensive internal knowledge base articles, standardizing
+        troubleshooting protocols and accelerating onboarding for new
         technicians by **~30%**.
-    - company: Three Stars Fashion Group
+    - company: GlobalTrade Logistics
       position: Data Engineer Intern
       location: Alexandria, Egypt
       date: 2025-06 – 2025-09
       highlights:
-      - Automated the processing of supplier inventory spreadsheets using 
-        **Python** and **Pandas**, eliminating manual data cleaning and saving 
+      - Automated the processing of supplier inventory spreadsheets using
+        **Python** and **Pandas**, eliminating manual data cleaning and saving
         the supply chain team **16+ hours** weekly.
-      - Deployed a live dashboard (**Flask**, **Chart.js**) to visualize 
-        production line output, allowing managers to pinpoint assembly line 
+      - Deployed a live dashboard (**Flask**, **Chart.js**) to visualize
+        production line output, allowing managers to pinpoint assembly line
         bottlenecks instantly.
-      - Designed a serverless alert system (**AWS Lambda**, **SNS**) to 
-        instantly notify the logistics team of shipment-ready orders, cutting 
+      - Designed a serverless alert system (**AWS Lambda**, **SNS**) to
+        instantly notify the logistics team of shipment-ready orders, cutting
         communication delays by **~80%**.
-    - company: Sunwater Capital
+    - company: Summit Capital Partners
       position: Data Science Intern
       location: North Bethesda, MD
       date: 2025-01 – 2025-05
       highlights:
-      - Architected an end-to-end data pipeline (**PySpark**, **SerpAPI**) to 
-        automatically extract and clean **[~10,000+]** legislative records, 
+      - Architected an end-to-end data pipeline (**PySpark**, **SerpAPI**) to
+        automatically extract and clean **[~10,000+]** legislative records,
         ensuring reliable data streams for analysis.
       - Built an AI validation tool utilizing the **OpenAI API**, cutting manual
         fact-checking time for the research team by **90%**.
-      - Developed a **Python** web scraper incorporating **NLP** to extract 
-        strategic insights and key topics from unstructured committee hearing 
+      - Developed a **Python** web scraper incorporating **NLP** to extract
+        strategic insights and key topics from unstructured committee hearing
         transcripts.
-      - Transformed raw web data into analysis-ready datasets using **R** 
-        (dplyr, tidyr), enabling advanced modeling and clear executive 
+      - Transformed raw web data into analysis-ready datasets using **R**
+        (dplyr, tidyr), enabling advanced modeling and clear executive
         reporting.
-    - company: China Fun Restaurants
+    - company: FreshBite Restaurants
       position: Data Analyst / Assistant Manager
       location: Charlotte, NC
       date: 2020-09 – 2024-08
       highlights:
-      - Implemented a time-series forecasting model on historical sales data to 
+      - Implemented a time-series forecasting model on historical sales data to
         optimize daily inventory procurement, reducing food waste by **14%** and
         increasing profit margins by **7%**.
-      - Analyzed a complex **200+** item menu utilizing **Tableau** and **Power 
-        BI** to identify profitability trends, driving data-backed marketing 
+      - Analyzed a complex **200+** item menu utilizing **Tableau** and **Power
+        BI** to identify profitability trends, driving data-backed marketing
         decisions.
-      - Developed compelling data narratives that successfully influenced a new 
+      - Developed compelling data narratives that successfully influenced a new
         menu strategy, generating an additional **$5,000** in monthly revenue.
     leadership_&_campus_involvement:
-    - company: Association of Computing Machinery (ACM) | George Washington 
-        University
+    - company: Association of Computing Machinery (ACM) | Northside University
       position: President
       date: 2024-08 – Present
       highlights:
-      - Hosted **10+** professional development workshops covering technical 
-        upskilling, **AI/ML** trends, and software engineering best practices 
+      - Hosted **10+** professional development workshops covering technical
+        upskilling, **AI/ML** trends, and software engineering best practices
         for the university community.
-      - Scaled chapter membership by **100+** active students through targeted 
+      - Scaled chapter membership by **100+** active students through targeted
         marketing campaigns, campus events, and cross-organization networking.
     projects:
     - name: "Job Automation Suite"
@@ -133,23 +130,23 @@ cv:
       - "Developed a sophisticated data analytics engine utilizing **Pandas** to execute complex keyword-matching algorithms, automatically parsing unstructured text datasets to isolate, score, and rank the top **5%** most highly correlated records."
       - "Architected an autonomous document generation pipeline integrating **LLM orchestration** with **ruamel.yaml** for AST-based (Abstract Syntax Tree) data mutation, dynamically compiling outputs via **RenderCV** while guaranteeing **100%** structural data integrity."
       - "Containerized the entire multi-service application suite utilizing **Docker Compose** to establish a resilient, cross-platform deployment environment with continuous data synchronization, reducing end-to-end processing time from **45** minutes to under **2** minutes."
-      - "**[GitHub Repository](https://github.com/aguo890/Job-Automation-Suite)**"
-    - name: OpenClaw Agentic Suite (Workflow Optimization)
+      - "**[GitHub Repository](https://github.com/johndoe/job-automation-suite)**"
+    - name: AI Agentic Suite (Workflow Optimization)
       date: 2026-01 – Present
-      summary: A highly optimized, multi-agent framework configured to 
-        drastically accelerate personal software engineering and research 
+      summary: A highly optimized, multi-agent framework configured to
+        drastically accelerate personal software engineering and research
         lifecycles.
       highlights:
-      - Customized the OpenClaw architecture to act as a virtual engineering 
-        department, transitioning personal workflow into a managerial role 
+      - Customized an agentic architecture to act as a virtual engineering
+        department, transitioning personal workflow into a managerial role
         orchestrating a specialized team of AI "experts."
-      - Engineered parallel execution branches to automate code generation, 
+      - Engineered parallel execution branches to automate code generation,
         deep-dive research, and daily reporting, achieving a **10x** increase in
         personal shipping velocity.
       - Optimized the agentic suite to mimic the rapid iteration cycles of elite
-        AI labs, freeing up cognitive bandwidth to focus strictly on high-level 
+        AI labs, freeing up cognitive bandwidth to focus strictly on high-level
         systems architecture and strategic problem-solving.
-    - name: "JEGA: Academic Test Facility"
+    - name: "Exam Proctoring Platform"
       date: 2025-10 – Present
       summary: "Architected an open-source, full-stack proctoring platform designed to secure academic testing environments through real-time telemetry, spatial mapping, and dynamic classroom administration. Tech Stack: **React (TS)**, **FastAPI**, **MySQL**, **Docker**, **Linux**, **Bash**, **Ansible**, **SSH**, **LDAP**."
       highlights:
@@ -159,43 +156,43 @@ cv:
       - "Implemented strict enterprise-grade security protocols by integrating **LDAP** for institutional identity verification and engineering a comprehensive **RBAC** system, enforcing session exclusivity across **500+** university accounts."
       - "Designed a fault-tolerant, atomic file submission engine integrating **Webhooks**, capable of processing bulk **CSV** user imports and asynchronous **Zip** payload streaming for **1,000+** assignments with zero data loss."
       - "Developed a responsive, real-time instructor dashboard featuring a spatial room mapping system built with **CSS Modules**, providing granular telemetry on student connectivity and upload progress for **150+** concurrent users."
-      - '"**[GitHub Repository](https://github.com/aguo890/capstone)**"'
+      - "**[GitHub Repository](https://github.com/johndoe/exam-proctoring)**"
     - name: AI-Powered Content Pipeline
       date: 2025
-      summary: Fully automated system for generating and posting short-form 
+      summary: Fully automated system for generating and posting short-form
         video content from Reddit stories.
       highlights:
-      - Automated programmatic video rendering and implemented dynamic, 
+      - Automated programmatic video rendering and implemented dynamic,
         dyslexic-friendly captioning to boost viewer retention by **~50%**.
-      - Integrated third-party OAuth APIs to schedule and publish content 
+      - Integrated third-party OAuth APIs to schedule and publish content
         synchronously across TikTok, Instagram Reels, and YouTube Shorts.
-      - Engineered an API key rotation algorithm for **ElevenLabs**, optimizing 
+      - Engineered an API key rotation algorithm for **ElevenLabs**, optimizing
         costs for high-volume Text-to-Speech generation.
     - name: Graduate Application System
       date: 2024
-      summary: A full-stack management platform for tracking graduate school 
+      summary: A full-stack management platform for tracking graduate school
         application lifecycles.
       highlights:
-      - Architected a centralized user dashboard enabling applicants to track 
+      - Architected a centralized user dashboard enabling applicants to track
         submission stages, deadlines, and requirements.
-      - Engineered a document management module with automated status webhooks 
+      - Engineered a document management module with automated status webhooks
         to alert users of missing materials or timeline updates.
     - name: Statistical Analysis in Esports
       date: 2022
-      summary: Research paper analyzing the impact of resource accumulation on 
+      summary: Research paper analyzing the impact of resource accumulation on
         game outcomes in League of Legends.
       highlights:
-      - Authored and published quantitative findings in the Journal of Student 
+      - Authored and published quantitative findings in the Journal of Student
         Research (JSR) as a peer-reviewed preprint.
-      - Applied rigorous statistical modeling techniques to analyze the 
+      - Applied rigorous statistical modeling techniques to analyze the
         correlation between early-game gold differentials and ultimate match win
         rates.
     education:
-    - institution: The George Washington University
+    - institution: Northside University
       area: Computer Science
       degree: Bachelor of Science
       date: Expected 2026-06
-      location: Washington, DC
+      location: New York, NY
     skills:
     - label: Languages
       details: Python, SQL, R, TypeScript, JavaScript, Java, Kotlin
@@ -205,10 +202,10 @@ cv:
       details: FastAPI, Node.js, PostgreSQL, SQLAlchemy, Alembic, Redis, Celery,
         REST APIs
     - label: Data & Controls
-      details: PLCs, SCADA, Prompt Engineering, Agentic AIs, Google AI Studio, 
+      details: PLCs, SCADA, Prompt Engineering, Agentic AIs, Google AI Studio,
         OpenAI API
     - label: Tools & Cloud
-      details: Docker, Git, Makefile, Tailwind CSS, AWS Lambda, Nginx, Ansible, 
+      details: Docker, Git, Makefile, Tailwind CSS, AWS Lambda, Nginx, Ansible,
         Bash
     - label: Spoken Languages
       details: English (Native), Mandarin (Fluent)
@@ -240,5 +237,5 @@ design:
     side_space: 0cm
 settings:
   render_command:
-    pdf_path: "rendercv_output/aaron_guo_master_cv.pdf"
-    png_path: "rendercv_output/aaron_guo_master_cv.png"
+    pdf_path: "rendercv_output/john_doe_cv.pdf"
+    png_path: "rendercv_output/john_doe_cv.png"
